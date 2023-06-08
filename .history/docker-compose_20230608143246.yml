@@ -9,9 +9,9 @@ services:
         restart: unless-stopped
         working_dir: /var/www/
         volumes:
-          - ./:/var/www
+            - ./:/var/www
         networks: 
-          - ariakish_net
+            - ariakish
                 
     # nginx
     nginx:
@@ -23,12 +23,12 @@ services:
             - ./:/var/www
             - ./docker/nginx/:/etc/nginx/conf.d/
         networks: 
-          - ariakish_net
+            - ariakish
 
     # db mariadb
     database:
         image: mariadb:latest
-        restart: always
+        restart: unless-stopped
         environment: 
             - MARIADB_DATABASE=${DB_DATABASE}
             - MARIADB_ROOT_PASSWORD=${DB_PASSWORD}
@@ -40,7 +40,7 @@ services:
             - 3388:3306
         command: --default-authentication-plugin=mysql_native_password
         networks: 
-          - ariakish_net
+            - ariakish
   
     #PHPMYADMIN  Service
     phpmyadmin:
@@ -48,20 +48,19 @@ services:
         environment:
             - PMA_PASSWORD=${DB_PASSWORD}
             - PMA_USER=${DB_USERNAME}
-            - PMA_HOST=database
-            - UPLOAD_LIMIT=2G
-            - MEMORY_LIMIT=2G
+            - PMA_HOST=${DB_HOST}
+            - UPLOAD_LIMIT=102400000000
         restart: always
         ports:
-           - 8115:80
+            - 8115:80
         links:
-          - database
+            - database
         networks:
-          - ariakish_net
+            - ariakish
 volumes:
     mariadb-data:
         driver: local
 
 networks:
-    ariakish_net:
+    ariakish:
         driver: bridge

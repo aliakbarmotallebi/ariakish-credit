@@ -46,8 +46,6 @@ services:
     phpmyadmin:
         image: phpmyadmin/phpmyadmin:latest
         environment:
-            - PMA_PASSWORD=${DB_PASSWORD}
-            - PMA_USER=${DB_USERNAME}
             - PMA_HOST=database
             - UPLOAD_LIMIT=2G
             - MEMORY_LIMIT=2G

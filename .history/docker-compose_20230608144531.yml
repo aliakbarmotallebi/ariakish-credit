@@ -9,9 +9,9 @@ services:
         restart: unless-stopped
         working_dir: /var/www/
         volumes:
-          - ./:/var/www
+            - ./:/var/www
         networks: 
-          - ariakish_net
+            - ariakish_net
                 
     # nginx
     nginx:
@@ -23,7 +23,7 @@ services:
             - ./:/var/www
             - ./docker/nginx/:/etc/nginx/conf.d/
         networks: 
-          - ariakish_net
+            - ariakish_net
 
     # db mariadb
     database:
@@ -40,7 +40,7 @@ services:
             - 3388:3306
         command: --default-authentication-plugin=mysql_native_password
         networks: 
-          - ariakish_net
+            - ariakish_net
   
     #PHPMYADMIN  Service
     phpmyadmin:
@@ -53,11 +53,11 @@ services:
             - MEMORY_LIMIT=2G
         restart: always
         ports:
-           - 8115:80
+            - 8115:80
         links:
-          - database
+            - database
         networks:
-          - ariakish_net
+            - ariakish_net
 volumes:
     mariadb-data:
         driver: local

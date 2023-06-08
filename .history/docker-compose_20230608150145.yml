@@ -26,7 +26,7 @@ services:
           - ariakish_net
 
     # db mariadb
-    database:
+    mariadb:
         image: mariadb:latest
         restart: always
         environment: 
@@ -48,7 +48,7 @@ services:
         environment:
             - PMA_PASSWORD=${DB_PASSWORD}
             - PMA_USER=${DB_USERNAME}
-            - PMA_HOST=database
+            - PMA_HOST=mariadb
             - UPLOAD_LIMIT=2G
             - MEMORY_LIMIT=2G
         restart: always
