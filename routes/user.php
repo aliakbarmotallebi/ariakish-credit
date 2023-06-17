@@ -17,6 +17,12 @@ Route::put('profile', [ProfileController::class, 'update'])
 Route::get('/appliances', [ApplianceController::class, 'index'])
     ->name('appliances.index');
 
+Route::post('/payments/request', [PaymentController::class, 'request'])
+    ->name('payments.request');
+
+Route::any('/payments/callback', [PaymentController::class, 'callback'])
+    ->name('payments.callback');
+
 Route::get('/payments', [PaymentController::class, 'index'])
     ->name('payments.index');
     

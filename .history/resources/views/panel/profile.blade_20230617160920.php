@@ -13,24 +13,16 @@
                     </svg>
                 </div>
             </div>
-            <div class="p-10 pb-2">
+            <div class="p-10">
                 <div class="my-5 flex items-center p-4 text-sm text-gray-800 rounded-lg bg-gray-50 dark:bg-gray-800 dark:text-gray-300" role="alert">
                     <span class="font-medium ml-2">
                     کاربر گرامی !    
                     </span> 
                     لطفا به تکمیل مشخصات فردی اقدام نمایید.
                     <div class="mr-auto">
-                        @if (!$user->isConfirmedUser())
                         <span class="bg-red-100 text-red-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-red-900 dark:text-red-300">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 inline ml-1 fill-current" viewBox="0 0 24 24"><path d="M12.0007 10.5865L16.9504 5.63672L18.3646 7.05093L13.4149 12.0007L18.3646 16.9504L16.9504 18.3646L12.0007 13.4149L7.05093 18.3646L5.63672 16.9504L10.5865 12.0007L5.63672 7.05093L7.05093 5.63672L12.0007 10.5865Z"></path></svg>
                             تایید نشده
                         </span>
-                        @else
-                        <span class="bg-red-100 text-red-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-red-900 dark:text-red-300">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 inline ml-1 fill-current" viewBox="0 0 24 24"><path d="M11.602 13.7599L13.014 15.1719L21.4795 6.7063L22.8938 8.12051L13.014 18.0003L6.65 11.6363L8.06421 10.2221L10.189 12.3469L11.6025 13.7594L11.602 13.7599ZM11.6037 10.9322L16.5563 5.97949L17.9666 7.38977L13.014 12.3424L11.6037 10.9322ZM8.77698 16.5873L7.36396 18.0003L1 11.6363L2.41421 10.2221L3.82723 11.6352L3.82604 11.6363L8.77698 16.5873Z"></path></svg>
-                            تایید شده
-                        </span>
-                        @endif
                     </div>
                 </div>
                 <form class="grid grid-cols-2 gap-3" action="{{ route('user.profile.update') }}" method="POST" enctype="multipart/form-data">
@@ -141,7 +133,7 @@
                     <div class="col-span-2 my-4 text-left border-t border-gray-200 py-5">
                         <button
                             type="submit"
-                            class="bg-primary text-white hover:bg-primary/50 focus:ring-4 focus:outline-none focus:ring-primary/30 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
+                            class="bg-primary text-white text-sm rounded-md py-1.5 px-4 hover:bg-primary/80 transition-all duration-200">
                             ویرایش پروفایل
                         </button>
                     </div>

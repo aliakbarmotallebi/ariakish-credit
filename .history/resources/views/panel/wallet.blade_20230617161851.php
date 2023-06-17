@@ -3,28 +3,22 @@
 @section('content')
     <div class="px-20 py-10">
         <div class="space-y-8">
-            <form action="{{ route('user.payments.request') }}" method="POST">
-            @csrf
             <div class="card border rounded-lg overflow-hidden p-5">
                 <section class="w-full" x-data="{price:''}">
                     <div  class="mb-2" >
                         <label class="@error('amount') error-label @enderror  block pb-2 text-sm font-medium ">
                             مبلغ به ریال
                             <span class="inline-flex bg-red-500 w-1 h-1 rounded-full"></span>
-                            
+                            <span x-show="price" x-text="((price > 0) ? price.num2persian() : '') + ' ریال'" class="mr-1 text-xs text-green-700 font-semibold">
                             </span>
                         </label>
-                        <div class="relative">
-                            <input type="number" x-model.number="price" name="amount" value="amount" class="@error('amount') error-input @enderror shadow-sm bg-white border  text-sm rounded-lg block w-full p-2.5
-                                ">
-                            <div class="absolute bottom-0 left-10 top-0 grid place-items-center">
-                                <span x-text="((price > 0) ? price.num2persian() : 'صفر') + ' ریال'" class="bg-green-100 text-gray-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded mr-1 text-xs text-green-700 font-semibold ">
-                            </div>
-                        </div>
+                        <input type="number" x-model.number="price" value="amount" class="@error('amount') error-input @enderror shadow-sm bg-white border  text-sm rounded-lg block w-full p-2.5
+                            ">
+            
                         @error('amount')
-                            <small class="text-xs -translate-y-1 bg-rose-50 text-rose-500 rounded px-2 min-h-8 font-semibold">
+                            <p class="mt-1 text-xs text-red-600 dark:text-red-500">
                                 {{ $message }}
-                            </small>
+                            </p>
                         @enderror
                     </div>
                     <div class="grid grid-cols-3 gap-2 ">
@@ -85,12 +79,11 @@
                     </div>
                 </section>
                 <div class="mt-2 flex items-center space-x-reverse px-2 py-3 space-x-2 rounded-b border-t border-gray-200 dark:border-gray-600">
-                    <button type="submit" class="bg-primary text-white hover:bg-primary/50 focus:ring-4 focus:outline-none focus:ring-primary/30 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
+                    <button type="button" class="bg-primary text-white hover:bg-primary/50 focus:ring-4 focus:outline-none focus:ring-primary/30 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
                         ورود به درگاه پرداخت
                     </button>
                 </div>
             </div>
-            </form>
             <p class="mb-3">لیست تراکنش های کیف پول</p>
             <div class="card border rounded-lg overflow-hidden">
                 <div class="relative overflow-x-auto">
@@ -122,60 +115,49 @@
                             </tr>
                         </thead>
                         <tbody class="whitespace-nowrap">
-                          @forelse($wallets as $wallet)
-                            <tr class="bg-white border-b hover:bg-gray-100">
-                                <td scope="row" class="px-6 py-4 text-center">
-                                    {{ $wallet->id }}
-                                </td>
-                                <td scope="row" class="px-6 py-4 text-center">
-                                    {{ $wallet->getAmount() }}
-                                </td>
-                                <td scope="row" class="px-6 py-4 text-center">
-                                    {{ number_format($wallet->getBalance()) }}
-                                </td>
-                                <td scope="row" class="px-6 py-4 text-center whitespace-nowrap">
-                                    {{ $wallet->summery }} 
-                                </td>
-                                <td scope="row" class="px-6 py-4 text-center  whitespace-nowrap">
-                                    @if ($wallet->type == 'TYPE_DEPOSIT')
-                                    <div class="text-green-500">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="inline fill-current" viewBox="0 0 24 24" width="18" height="18"><path fill="none" d="M0 0h24v24H0z"/><path d="M13 7.828V20h-2V7.828l-5.364 5.364-1.414-1.414L12 4l7.778 7.778-1.414 1.414L13 7.828z"/></svg>
-                                        واریز به کیف پول
-                                    </div>
-                                    @else
-                                    <div class="text-rose-500">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="inline fill-current" viewBox="0 0 24 24" width="18" height="18"><path fill="none" d="M0 0h24v24H0z"/><path d="M13 16.172l5.364-5.364 1.414 1.414L12 20l-7.778-7.778 1.414-1.414L11 16.172V4h2v12.172z"/></svg>                                    
-                                        برداشت از کیف پول
-                                    </div>                            
-                                    @endif
-                                </td>
-                                <td class="px-6 py-4 text-center  whitespace-nowrap">
-                                    @if ($wallet->status == 'STATUS_COMPLETED')
-                                        <span class="bg-green-100 text-green-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-green-200 dark:text-green-900">
-                                        تراکنش موفق
-                                        </span>
-                                        @else
-                                        <span class="bg-red-100 text-red-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-red-200 dark:text-red-900">
-                                    تراکنش ناموفق
-                                        </span>
-                                    @endif
-                                </td>
-                                <td scope="row" class="px-6 py-4 text-center">
-                                    {{ $wallet->getCreatedAt() }}
-                                </td>
-                            </tr>
-                          @empty
-                            <tr>
-                                <td colspan="7" align="center" >
-                                    <div class="text-neutral-500 flex flex-col justify-center items-center py-5">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 fill-current" viewBox="0 0 24 24"><path d="M10.9999 2.04932L11 4.06182C7.05371 4.5539 4 7.9203 4 11.9999C4 16.4182 7.58172 19.9999 12 19.9999C13.8487 19.9999 15.5509 19.3729 16.9055 18.3199L18.3289 19.7427C16.605 21.1535 14.4014 21.9999 12 21.9999C6.47715 21.9999 2 17.5228 2 11.9999C2 6.81462 5.94662 2.55109 10.9999 2.04932ZM21.9506 13C21.7509 15.011 20.9555 16.8467 19.7433 18.3282L18.3199 16.9055C19.1801 15.7989 19.756 14.4606 19.9381 12.9999L21.9506 13ZM13.0011 2.04942C17.725 2.51895 21.4815 6.27583 21.9506 10.9998L19.9381 11C19.4869 7.38156 16.6192 4.51358 13.001 4.06194L13.0011 2.04942Z"></path></svg>
-                                        <div class="text-xs font-medium mt-2">
-                                            هیچ اطلاعاتی وجود ندارد
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
-                          @endforelse 
+                          @foreach ($wallets as $wallet)
+                          <tr class="bg-white border-b hover:bg-gray-100">
+                              <td scope="row" class="px-6 py-4 text-center">
+                                  {{ $wallet->id }}
+                              </td>
+                              <td scope="row" class="px-6 py-4 text-center">
+                                  {{ $wallet->getAmount() }}
+                              </td>
+                              <td scope="row" class="px-6 py-4 text-center">
+                                  {{ number_format($wallet->getBalance()) }}
+                              </td>
+                              <td scope="row" class="px-6 py-4 text-center whitespace-nowrap">
+                      {{ $wallet->summery }} 
+                              </td>
+                              <td scope="row" class="px-6 py-4 text-center  whitespace-nowrap">
+                                  @if ($wallet->type == 'TYPE_DEPOSIT')
+                                  <div class="text-green-500">
+                                      <svg xmlns="http://www.w3.org/2000/svg" class="inline fill-current" viewBox="0 0 24 24" width="18" height="18"><path fill="none" d="M0 0h24v24H0z"/><path d="M13 7.828V20h-2V7.828l-5.364 5.364-1.414-1.414L12 4l7.778 7.778-1.414 1.414L13 7.828z"/></svg>
+                                      واریز به کیف پول
+                                  </div>
+                                  @else
+                                  <div class="text-rose-500">
+                                      <svg xmlns="http://www.w3.org/2000/svg" class="inline fill-current" viewBox="0 0 24 24" width="18" height="18"><path fill="none" d="M0 0h24v24H0z"/><path d="M13 16.172l5.364-5.364 1.414 1.414L12 20l-7.778-7.778 1.414-1.414L11 16.172V4h2v12.172z"/></svg>                                    
+                                      برداشت از کیف پول
+                                  </div>                            
+                                  @endif
+                              </td>
+                              <td class="px-6 py-4 text-center  whitespace-nowrap">
+                                  @if ($wallet->status == 'STATUS_COMPLETED')
+                                      <span class="bg-green-100 text-green-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-green-200 dark:text-green-900">
+                                      تراکنش موفق
+                                      </span>
+                                      @else
+                                      <span class="bg-red-100 text-red-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-red-200 dark:text-red-900">
+                                  تراکنش ناموفق
+                                      </span>
+                                  @endif
+                              </td>
+                              <td scope="row" class="px-6 py-4 text-center">
+                                  {{ $wallet->getCreatedAt() }}
+                              </td>
+                          </tr>
+                          @endforeach
                         </tbody>
                     </table>
                 </div>
