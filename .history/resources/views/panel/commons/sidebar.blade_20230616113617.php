@@ -28,9 +28,6 @@
         </svg>
     </div>
     <p class="text-center mt-3">سامانه تعمیر لوازم خانگی</p>
-    <div class="font-normal pt-0.5 text-sm text-white/50 text-center">
-        Home Appliance Repair System
-    </div>
     <ul class="mt-12 text-sm space-y-2">
         <li>
             <a 
@@ -38,7 +35,7 @@
                     'bg-white/10' => _is_link_active('user.profile.edit'),
                     'w-full h-full block hover:bg-white/10 transition-all duration-200 py-4 rounded-lg px-5',
                 ])
-                href="{{  route('user.profile.edit') }}">
+                href="profile.html">
                 <svg class="inline ml-1" width="18" height="18" viewBox="0 0 18 18" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
                     <path
@@ -50,7 +47,7 @@
         </li>
         <li>
             <a                 @class([
-                'bg-white/10' => _is_link_active('user.profile'),
+                'bg-white/10' => _is_link_active('user.profile.edit'),
                 'w-full h-full block hover:bg-white/10 transition-all duration-200 py-4 rounded-lg px-5',
             ])>
                 <svg class="inline ml-1" width="17" height="18" viewBox="0 0 17 18" fill="none"
@@ -66,7 +63,7 @@
             <a                 @class([
                 'bg-white/10' => _is_link_active('user.wallets.index'),
                 'w-full h-full block hover:bg-white/10 transition-all duration-200 py-4 rounded-lg px-5',
-            ]) href="{{  route('user.wallets.index') }}">
+            ])>
                 <svg class="inline ml-1" width="18" height="14" viewBox="0 0 18 14" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
                     <path
@@ -80,7 +77,7 @@
             <a                 @class([
                 'bg-white/10' => _is_link_active('user.payments.index'),
                 'w-full h-full block hover:bg-white/10 transition-all duration-200 py-4 rounded-lg px-5',
-            ]) href="{{  route('user.payments.index') }}">
+            ])>
                 <svg class="inline ml-1" width="18" height="18" viewBox="0 0 18 18" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
                     <path

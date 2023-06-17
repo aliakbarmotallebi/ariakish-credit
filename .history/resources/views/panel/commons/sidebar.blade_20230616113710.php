@@ -28,9 +28,6 @@
         </svg>
     </div>
     <p class="text-center mt-3">سامانه تعمیر لوازم خانگی</p>
-    <div class="font-normal pt-0.5 text-sm text-white/50 text-center">
-        Home Appliance Repair System
-    </div>
     <ul class="mt-12 text-sm space-y-2">
         <li>
             <a 
@@ -50,7 +47,7 @@
         </li>
         <li>
             <a                 @class([
-                'bg-white/10' => _is_link_active('user.profile'),
+                'bg-white/10' => _is_link_active('user.profile.edit'),
                 'w-full h-full block hover:bg-white/10 transition-all duration-200 py-4 rounded-lg px-5',
             ])>
                 <svg class="inline ml-1" width="17" height="18" viewBox="0 0 17 18" fill="none"

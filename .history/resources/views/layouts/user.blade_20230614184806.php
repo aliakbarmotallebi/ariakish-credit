@@ -23,10 +23,6 @@
                         {{ auth()->user()->fullname ?? NULL }}
                     </span>
                     خوش آمدید
-
-                    <a href="/logout" class="text-sm underline px-5 text-rose-500">
-                    خروج از سیستم 
-                    </a>
                 </div>
                 <div class="h-full w-28">
                     <img class="w-full h-full" src="/images/iran.png" alt="iran" />

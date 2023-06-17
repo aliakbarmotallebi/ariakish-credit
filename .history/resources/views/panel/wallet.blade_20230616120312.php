@@ -81,9 +81,6 @@
                     </table>
                 </div>
             </div>
-            <div class="flex justify-center items-center py-5">
-              {!! $wallets->links('pagination::tailwind') !!}
-             </div>
         </div>
     </div>
 @endsection

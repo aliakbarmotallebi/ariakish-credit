@@ -28,7 +28,7 @@
         </svg>
     </div>
     <p class="text-center mt-3">سامانه تعمیر لوازم خانگی</p>
-    <div class="font-normal pt-0.5 text-sm text-white/50 text-center">
+    <div class="font-normal pt-0.5 text-sm text-primary/70">
         Home Appliance Repair System
     </div>
     <ul class="mt-12 text-sm space-y-2">

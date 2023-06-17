@@ -28,17 +28,10 @@
         </svg>
     </div>
     <p class="text-center mt-3">سامانه تعمیر لوازم خانگی</p>
-    <div class="font-normal pt-0.5 text-sm text-white/50 text-center">
-        Home Appliance Repair System
-    </div>
     <ul class="mt-12 text-sm space-y-2">
         <li>
-            <a 
-                @class([
-                    'bg-white/10' => _is_link_active('user.profile.edit'),
-                    'w-full h-full block hover:bg-white/10 transition-all duration-200 py-4 rounded-lg px-5',
-                ])
-                href="{{  route('user.profile.edit') }}">
+            <a class="w-full h-full block bg-white/10 hover:bg-white/10 transition-all duration-200 py-4 rounded-lg px-5"
+                href="profile.html">
                 <svg class="inline ml-1" width="18" height="18" viewBox="0 0 18 18" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
                     <path
@@ -49,10 +42,8 @@
             </a>
         </li>
         <li>
-            <a                 @class([
-                'bg-white/10' => _is_link_active('user.profile'),
-                'w-full h-full block hover:bg-white/10 transition-all duration-200 py-4 rounded-lg px-5',
-            ])>
+            <a class="w-full h-full block py-4 hover:bg-white/10 transition-all duration-200 rounded-lg px-5"
+                href="cart.html">
                 <svg class="inline ml-1" width="17" height="18" viewBox="0 0 17 18" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
                     <path
@@ -63,10 +54,8 @@
             </a>
         </li>
         <li>
-            <a                 @class([
-                'bg-white/10' => _is_link_active('user.wallets.index'),
-                'w-full h-full block hover:bg-white/10 transition-all duration-200 py-4 rounded-lg px-5',
-            ]) href="{{  route('user.wallets.index') }}">
+            <a class="w-full h-full block py-4 hover:bg-white/10 transition-all duration-200 rounded-lg px-5"
+                href="transactions.html">
                 <svg class="inline ml-1" width="18" height="14" viewBox="0 0 18 14" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
                     <path
@@ -77,10 +66,8 @@
             </a>
         </li>
         <li>
-            <a                 @class([
-                'bg-white/10' => _is_link_active('user.payments.index'),
-                'w-full h-full block hover:bg-white/10 transition-all duration-200 py-4 rounded-lg px-5',
-            ]) href="{{  route('user.payments.index') }}">
+            <a class="w-full h-full block py-4 hover:bg-white/10 transition-all duration-200 rounded-lg px-5"
+                href="payments.html">
                 <svg class="inline ml-1" width="18" height="18" viewBox="0 0 18 18" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
                     <path

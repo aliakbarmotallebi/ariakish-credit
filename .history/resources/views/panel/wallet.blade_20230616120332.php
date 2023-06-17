@@ -82,7 +82,7 @@
                 </div>
             </div>
             <div class="flex justify-center items-center py-5">
-              {!! $wallets->links('pagination::tailwind') !!}
+              {!! $payments->links('pagination::tailwind') !!}
              </div>
         </div>
     </div>

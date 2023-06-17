@@ -51,12 +51,12 @@
                               <td scope="row" class="px-6 py-4 text-center  whitespace-nowrap">
                                   @if ($wallet->type == 'TYPE_DEPOSIT')
                                   <div class="text-green-500">
-                                      <svg xmlns="http://www.w3.org/2000/svg" class="inline fill-current" viewBox="0 0 24 24" width="18" height="18"><path fill="none" d="M0 0h24v24H0z"/><path d="M13 7.828V20h-2V7.828l-5.364 5.364-1.414-1.414L12 4l7.778 7.778-1.414 1.414L13 7.828z"/></svg>
+                                      <svg xmlns="http://www.w3.org/2000/svg" class="inline fill-current" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M13 7.828V20h-2V7.828l-5.364 5.364-1.414-1.414L12 4l7.778 7.778-1.414 1.414L13 7.828z"/></svg>
                                       واریز به کیف پول
                                   </div>
                                   @else
                                   <div class="text-rose-500">
-                                      <svg xmlns="http://www.w3.org/2000/svg" class="inline fill-current" viewBox="0 0 24 24" width="18" height="18"><path fill="none" d="M0 0h24v24H0z"/><path d="M13 16.172l5.364-5.364 1.414 1.414L12 20l-7.778-7.778 1.414-1.414L11 16.172V4h2v12.172z"/></svg>                                    
+                                      <svg xmlns="http://www.w3.org/2000/svg" class="inline fill-current" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M13 16.172l5.364-5.364 1.414 1.414L12 20l-7.778-7.778 1.414-1.414L11 16.172V4h2v12.172z"/></svg>                                    
                                       برداشت از کیف پول
                                   </div>                            
                                   @endif
@@ -81,9 +81,6 @@
                     </table>
                 </div>
             </div>
-            <div class="flex justify-center items-center py-5">
-              {!! $wallets->links('pagination::tailwind') !!}
-             </div>
         </div>
     </div>
 @endsection

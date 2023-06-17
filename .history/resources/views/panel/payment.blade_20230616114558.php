@@ -8,18 +8,18 @@
                 <div class="relative overflow-x-auto">
                     <table class="w-full text-center">
                         <thead
-                            class="text-xs border-b border-b-line text-neutral-700 font-bold uppercase bg-neutral-50 whitespace-nowrap">
+                            class="text-sm border-b border-b-line text-neutral-700 font-bold uppercase bg-neutral-50 whitespace-nowrap">
                             <tr>
-                                <th scope="col" class="px-5 py-4">کد رهگیری</th>
-                                <th scope="col" class="px-5 py-4">
+                                <th scope="col" class="px-4 py-2">کد رهگیری</th>
+                                <th scope="col" class="px-4 py-2">
                                     مبلغ پرداختی (ریال)
                                 </th>
-                                <th scope="col" class="px-5 py-4">نام درگاه</th>
-                                <th scope="col" class="px-5 py-4">
+                                <th scope="col" class="px-4 py-2">نام درگاه</th>
+                                <th scope="col" class="px-4 py-2">
                                     وضعیت تراکنش
                                 </th>
-                                <th scope="col" class="px-5 py-4">ساعت</th>
-                                <th scope="col" class="px-5 py-4">
+                                <th scope="col" class="px-4 py-2">ساعت</th>
+                                <th scope="col" class="px-4 py-2">
                                     تاریخ تراکنش
                                 </th>
                             </tr>
@@ -33,6 +33,9 @@
                                 <td scope="row" class="px-6 py-4 text-center text-base">
                                     {{ $payment->getAmount() }}
                                     ریال
+                                </td>
+                                <td scope="row" class="px-6 py-4 text-center text-base">
+                                    {{ $payment->user->getPrivateFullName() }}
                                 </td>
                                 <td scope="row" class="px-6 py-4 text-center text-base">
                                     {{ $payment->bank_name }}
@@ -60,9 +63,6 @@
                     </table>
                 </div>
             </div>
-            <div class="flex justify-center items-center py-5">
-                {!! $payments->links('pagination::tailwind') !!}
-               </div>
         </div>
     </div>
 @endsection
