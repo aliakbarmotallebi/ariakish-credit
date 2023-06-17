@@ -25,7 +25,7 @@ class User extends Authenticatable
         'postal_code',
         'address',
         'national_id_number',
-        'national_card_image_url',
+        'national_card_image_path',
     ];
 
     /**

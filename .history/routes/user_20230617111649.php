@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\User\ApplianceController;
 use App\Http\Controllers\User\PaymentController;
 use App\Http\Controllers\User\ProfileController;
 use App\Http\Controllers\User\WalletController;
@@ -14,7 +13,7 @@ Route::put('profile', [ProfileController::class, 'update'])
     ->withoutMiddleware(['confirmed.user'])    
     ->name('profile.update');
 
-Route::get('/appliances', [ApplianceController::class, 'index'])
+Route::get('/appliances', [PaymentController::class, 'index'])
     ->name('appliances.index');
 
 Route::get('/payments', [PaymentController::class, 'index'])

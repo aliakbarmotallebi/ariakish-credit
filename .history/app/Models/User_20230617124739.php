@@ -25,7 +25,7 @@ class User extends Authenticatable
         'postal_code',
         'address',
         'national_id_number',
-        'national_card_image_url',
+        'national_card_image_path',
     ];
 
     /**
@@ -35,6 +35,7 @@ class User extends Authenticatable
      */
     protected $hidden = [
         'password',
+        'remember_token',
     ];
 
     /**

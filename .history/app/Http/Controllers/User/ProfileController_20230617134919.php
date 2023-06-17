@@ -32,12 +32,15 @@ class ProfileController extends Controller
         ]);
 
         if($request->has('national_card_image_path')){
-           $request->merge([
+
+            $this->setUploadPath('carts/');
+            $request->merge([
                 'national_card_image_url' => $this->upload(
                 request()->file('national_card_image_path') )
             ]);
         }
-        $request->user()->update($request->all());
+dd($user);
+        $request->user()->update($user);
 
         alert()->success('اطلاعات با موفقیت بروزرسانی شد');
         return redirect()->back();

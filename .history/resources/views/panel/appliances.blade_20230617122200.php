@@ -93,7 +93,7 @@
             <div class="card  border rounded-lg overflow-hidden">
                 <div class="relative overflow-x-auto">
                     <table class="w-full text-center">
-                        <thead class="text-sm border-b text-neutral-700 border-b-line font-bold uppercase bg-gray-50">
+                        <thead class="text-sm border-b text-neutral-700 border-b-line text-darkLine font-bold uppercase bg-gray-50">
                             <tr>
                                 <th scope="col" class="px-5 py-4">برند</th>
                                 <th scope="col" class="px-5 py-4">گروه</th>

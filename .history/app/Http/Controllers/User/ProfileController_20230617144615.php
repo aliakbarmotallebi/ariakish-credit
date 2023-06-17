@@ -37,7 +37,8 @@ class ProfileController extends Controller
                 request()->file('national_card_image_path') )
             ]);
         }
-        $request->user()->update($request->all());
+dd($request->all());
+        $request->user()->update($user);
 
         alert()->success('اطلاعات با موفقیت بروزرسانی شد');
         return redirect()->back();

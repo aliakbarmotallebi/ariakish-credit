@@ -93,17 +93,17 @@
             <div class="card  border rounded-lg overflow-hidden">
                 <div class="relative overflow-x-auto">
                     <table class="w-full text-center">
-                        <thead class="text-sm border-b text-neutral-700 border-b-line font-bold uppercase bg-gray-50">
+                        <thead class="text-sm border-b border-b-line text-darkLine font-bold uppercase bg-gray-50">
                             <tr>
-                                <th scope="col" class="px-5 py-4">برند</th>
-                                <th scope="col" class="px-5 py-4">گروه</th>
-                                <th scope="col" class="px-5 py-4">محصول</th>
-                                <th scope="col" class="px-5 py-4">مدل</th>
-                                <th scope="col" class="px-5 py-4">قیمت</th>
-                                <th scope="col" class="px-5 py-4">
+                                <th scope="col" class="px-4 py-2">برند</th>
+                                <th scope="col" class="px-4 py-2">گروه</th>
+                                <th scope="col" class="px-4 py-2">محصول</th>
+                                <th scope="col" class="px-4 py-2">مدل</th>
+                                <th scope="col" class="px-4 py-2">قیمت</th>
+                                <th scope="col" class="px-4 py-2">
                                     عکس قبل از لیبل
                                 </th>
-                                <th scope="col" class="px-5 py-4">
+                                <th scope="col" class="px-4 py-2">
                                     عکس بعد از لیبل
                                 </th>
                             </tr>

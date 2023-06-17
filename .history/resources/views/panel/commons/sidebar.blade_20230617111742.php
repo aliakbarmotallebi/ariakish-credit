@@ -51,9 +51,9 @@
         <li>
             <a  
             @class([
-                'bg-white/10' => _is_link_active('user.appliances.index'),
+                'bg-white/10' => _is_link_active('user.appliances'),
                 'w-full h-full block hover:bg-white/10 transition-all duration-200 py-4 rounded-lg px-5',
-            ]) href="{{  route('user.appliances.index') }}">
+            ])>
                 <svg class="inline ml-1" width="17" height="18" viewBox="0 0 17 18" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
                     <path

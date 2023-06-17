@@ -113,9 +113,7 @@
                     <div class="flex flex-col">
                         <p class="text-sm" for="address">تصویر کارت ملی</p>
                         @if($user->national_card_image_url)
-                            <div class="w-32 h-32 mt-3 border rounded-lg overflow-hidden">
-                                <img class="w-full h-full objext-cover" src="{{ asset($user->national_card_image_url) }}" srcset="">
-                            </div>
+                            <img src="w-full h-full" alt="" srcset="">
                         @else 
                             <label for="national_card_image_path"
                                 class="mt-3 text-neutral-700 border-neutral-800 cursor-pointer border border-dashed px-3 py-1 transition-all duration-200 rounded">

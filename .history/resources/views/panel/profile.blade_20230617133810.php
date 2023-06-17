@@ -25,7 +25,7 @@
                         </span>
                     </div>
                 </div>
-                <form class="grid grid-cols-2 gap-3" action="{{ route('user.profile.update') }}" method="POST" enctype="multipart/form-data">
+                <form class="grid grid-cols-2 gap-3" action="{{ route('user.profile.update') }}" method="POST">
                     @csrf
                     @method('PUT')
                     <div class="flex flex-col">
@@ -45,7 +45,7 @@
                             کد ملی
                             <span class="inline-flex bg-red-500 w-1 h-1 rounded-full"></span>
                         </label>
-                        <input type="text" id="national_id_number" name="national_id_number" value="{{ old('national_id_number', $user->national_id_number) }}"
+                        <input type="text" id="national_id_number " name="national_id_number " value="{{ old('national_id_number', $user->national_id_number) }}"
                             class="border mt-3 border-line rounded-md py-1.5 focus:outline-none focus-within:border-textMain px-4 bg-main/50" />
                             @error('national_id_number')
                             <small class="text-xs -translate-y-1 bg-rose-50 text-rose-500 rounded px-2 min-h-8 font-semibold">
@@ -113,9 +113,7 @@
                     <div class="flex flex-col">
                         <p class="text-sm" for="address">تصویر کارت ملی</p>
                         @if($user->national_card_image_url)
-                            <div class="w-32 h-32 mt-3 border rounded-lg overflow-hidden">
-                                <img class="w-full h-full objext-cover" src="{{ asset($user->national_card_image_url) }}" srcset="">
-                            </div>
+                            <img src="w-full h-full" alt="" srcset="">
                         @else 
                             <label for="national_card_image_path"
                                 class="mt-3 text-neutral-700 border-neutral-800 cursor-pointer border border-dashed px-3 py-1 transition-all duration-200 rounded">

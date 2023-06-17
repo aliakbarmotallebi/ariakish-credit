@@ -25,14 +25,14 @@
                         </span>
                     </div>
                 </div>
-                <form class="grid grid-cols-2 gap-3" action="{{ route('user.profile.update') }}" method="POST" enctype="multipart/form-data">
+                <form class="grid grid-cols-2 gap-3" action="{{ route('user.profile.update') }}" method="POST">
                     @csrf
                     @method('PUT')
                     <div class="flex flex-col">
                         <label class="text-sm" for="fullname"> نام 
                             <span class="inline-flex bg-red-500 w-1 h-1 rounded-full"></span>
                         </label>
-                        <input type="text" id="fullname" name="fullname" value="{{ old('fullname', $user->fullname) }}"
+                        <input type="text" id="fullname" name="fullname" value="{{ $user->fullname }}"
                             class="border mt-3 border-line rounded-md py-1.5 focus:outline-none focus-within:border-textMain px-4 bg-main/50" />
                             @error('fullname')
                             <small class="text-xs -translate-y-1 bg-rose-50 text-rose-500 rounded px-2 min-h-8 font-semibold">
@@ -45,7 +45,7 @@
                             کد ملی
                             <span class="inline-flex bg-red-500 w-1 h-1 rounded-full"></span>
                         </label>
-                        <input type="text" id="national_id_number" name="national_id_number" value="{{ old('national_id_number', $user->national_id_number) }}"
+                        <input type="text" id="national_id_number " name="national_id_number " value="{{ $user->national_id_number }}"
                             class="border mt-3 border-line rounded-md py-1.5 focus:outline-none focus-within:border-textMain px-4 bg-main/50" />
                             @error('national_id_number')
                             <small class="text-xs -translate-y-1 bg-rose-50 text-rose-500 rounded px-2 min-h-8 font-semibold">
@@ -57,7 +57,7 @@
                         <label class="text-sm" for="tel">
                             شماره ثابت
                         </label>
-                        <input type="text" id="tel" name="tel" value="{{ old('tel', $user->tel) }}"
+                        <input type="text" id="tel" name="tel" value="{{ $user->tel }}"
                             class="border mt-3 border-line rounded-md py-1.5 focus:outline-none focus-within:border-textMain px-4 bg-main/50" />
                             @error('tel')
                             <small class="text-xs -translate-y-1 bg-rose-50 text-rose-500 rounded px-2 min-h-8 font-semibold">
@@ -70,7 +70,7 @@
                             شماره همراه
                             <span class="inline-flex bg-red-500 w-1 h-1 rounded-full"></span>
                         </label>
-                        <input type="text" id="mobile" name="mobile" value="{{ old('mobile', $user->mobile) }}"
+                        <input type="text" id="mobile" name="mobile" value="{{ $user->mobile }}"
                             class="border mt-3 border-line rounded-md py-1.5 focus:outline-none focus-within:border-textMain px-4 bg-main/50" />
                             @error('mobile')
                             <small class="text-xs -translate-y-1 bg-rose-50 text-rose-500 rounded px-2 min-h-8 font-semibold">
@@ -82,7 +82,7 @@
                         <label class="text-sm" for="mobile_second">
                             شماره همراه 2
                         </label>
-                        <input type="text" id="mobile_second" name="mobile_second" value="{{ old('mobile_second', $user->mobile_second) }}"
+                        <input type="text" id="mobile_second" name="mobile_second" value="{{ $user->mobile_second }}"
                             class="border mt-3 border-line rounded-md py-1.5 focus:outline-none focus-within:border-textMain px-4 bg-main/50" />
                             @error('mobile_second')
                             <small class="text-xs -translate-y-1 bg-rose-50 text-rose-500 rounded px-2 min-h-8 font-semibold">
@@ -92,7 +92,7 @@
                         </div>
                     <div class="flex flex-col">
                         <label class="text-sm" for="postal_code">کد پستی</label> 
-                        <input type="text" id="postal_code" name="postal_code" value="{{ old('postal_code', $user->postal_code) }}"
+                        <input type="text" id="postal_code" name="postal_code" value="{{ $user->postal_code }}"
                             class="border mt-3 border-line rounded-md py-1.5 focus:outline-none focus-within:border-textMain px-4 bg-main/50" />
                             @error('postal_code')
                             <small class="text-xs -translate-y-1 bg-rose-50 text-rose-500 rounded px-2 min-h-8 font-semibold">
@@ -103,7 +103,7 @@
                     <div class="flex flex-col">
                         <label class="text-sm" for="address">آدرس</label>
                         <textarea name="address" id="address" rows="3"
-                            class="border mt-3 border-line rounded-md py-1.5 focus:outline-none focus-within:border-textMain px-4 bg-main/50">{{ old('address', $user->address) }}</textarea>
+                            class="border mt-3 border-line rounded-md py-1.5 focus:outline-none focus-within:border-textMain px-4 bg-main/50">{{ $user->address }}</textarea>
                             @error('address')
                             <small class="text-xs -translate-y-1 bg-rose-50 text-rose-500 rounded px-2 min-h-8 font-semibold">
                                 {{ $message }}
@@ -113,9 +113,7 @@
                     <div class="flex flex-col">
                         <p class="text-sm" for="address">تصویر کارت ملی</p>
                         @if($user->national_card_image_url)
-                            <div class="w-32 h-32 mt-3 border rounded-lg overflow-hidden">
-                                <img class="w-full h-full objext-cover" src="{{ asset($user->national_card_image_url) }}" srcset="">
-                            </div>
+                            <img src="w-full h-full" alt="" srcset="">
                         @else 
                             <label for="national_card_image_path"
                                 class="mt-3 text-neutral-700 border-neutral-800 cursor-pointer border border-dashed px-3 py-1 transition-all duration-200 rounded">
