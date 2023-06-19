@@ -20,6 +20,6 @@ class ConfirmedUser
       if(Auth::user()->isConfirmedUser())
         return $next($request);
       else
-          return redirect(route('panel.profile.edit'));
+          return redirect(route('user.profile.edit'));
     }
 }

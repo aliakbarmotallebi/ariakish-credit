@@ -1,4 +1,4 @@
-<aside class="w-72 bg-primary min-h-screen text-white p-6">
+<aside class="max-w-sm w-full bg-primary min-h-screen text-white p-6">
     <div class="flex justify-center">
         <svg width="101" height="36" viewBox="0 0 101 36" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
