@@ -14,9 +14,6 @@ Route::resource('/users', UserController::class);
 Route::get('/appliances', [ApplianceController::class, 'index'])
     ->name('appliances.index');
 
-Route::get('/appliances/{user}', [ApplianceController::class, 'show'])
-    ->name('appliances.show');
-
 Route::controller(ContentController::class)
     ->prefix('content')
     ->as('content.')

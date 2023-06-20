@@ -71,33 +71,13 @@
           </div>
       </div>
       <div class="px-4 whitespace-nowrap">
-          <div class="text-right truncate">
+          <div class="text-right w-52 truncate">
               <span class="text-gray-400 text-xs block">
                   کد ملی
               </span>
               {{ $user->national_id_number }}
           </div>
       </div>
-      <div class="px-4 whitespace-nowrap">
-        <div class="text-right truncate">
-            <span class="text-gray-400 text-xs block">
-               وضعیت کاربر
-            </span>
-            @if ($user->isConfirmedUser())
-            <span class="bg-green-100 text-green-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded">
-                تایید شده
-            </span>
-            @elseif(!$user->isConfirmedUser())
-            <span class="bg-red-100 text-red-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded">
-                عدم تایید
-            </span>
-            @elseif($user->isProfileCompleted())
-                <span class="bg-yellow-100 text-yellow-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded">
-                    درانتظار بررسی
-                </span>
-            @endif
-        </div>
-    </div>
       <div class="flex text-center gap-x-1 mr-auto justify-self-end">
           <button
           type="button"

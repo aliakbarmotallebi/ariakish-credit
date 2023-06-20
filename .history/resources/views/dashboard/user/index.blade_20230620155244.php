@@ -44,7 +44,10 @@
       <div class="whitespace-nowrap flex items-center max-w-xs w-full">
           <div class="rounded-full bg-gray-100 pl-4 inline-flex items-center ">
               <div
-                  class="items-center text-xl bg-slate-800 inline-block h-12 w-12 rounded-full uppercase text-white text-center align-middle leading-loose">
+                    @class([
+                        'items-center bg-blue-400 text-xl inline-block h-12 w-12 rounded-full uppercase text-white text-center align-middle leading-loose',
+                        'bg-green-800' => $user->isConfirmedUser(),
+                    ])>
                   <span class="inline-flex items-center justify-center text-xs font-semibold">
                     {{ $user->id }}
                   </span>

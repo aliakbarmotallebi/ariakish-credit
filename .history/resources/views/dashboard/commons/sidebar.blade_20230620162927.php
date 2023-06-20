@@ -35,7 +35,7 @@
         <li>
             <a @class([
                 'bg-white/10' => _is_link_active('dashboard.users.index'),
-                'flex w-full h-full block hover:bg-white/10 transition-all duration-200 py-4 rounded-lg px-5',
+                'w-full h-full block hover:bg-white/10 transition-all duration-200 py-4 rounded-lg px-5',
             ]) href="{{ route('dashboard.users.index') }}">
                 <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current inline ml-1" width="24" height="24"
                     fill="none" viewBox="0 0 24 24">
@@ -45,15 +45,15 @@
                 <span>
                     مدیریت کاربران
                 </span>
-                <span class="mr-auto bg-gray-100 text-center text-gray-800 justify-center text-sm font-semibold inline-flex items-center w-6 h-6 rounded-full  dark:bg-gray-700 dark:text-gray-300">
-                    <span>{{ $user }}</span>
+                <span class="bg-gray-100 text-center text-gray-800 justify-center text-sm font-semibold inline-flex items-center w-6 h-6 rounded-full mr-2 dark:bg-gray-700 dark:text-gray-300">
+                    <span>1</span>
                 </span>
             </a>
         </li>
         <li>
             <a @class([
                 'bg-white/10' => _is_link_active('dashboard.appliances.index'),
-                'flex w-full h-full block hover:bg-white/10 transition-all duration-200 py-4 rounded-lg px-5',
+                'w-full h-full block hover:bg-white/10 transition-all duration-200 py-4 rounded-lg px-5',
             ]) href="{{ route('dashboard.appliances.index') }}">
                 <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current inline ml-1" width="24" height="24"
                     fill="none" viewBox="0 0 24 24">
@@ -65,9 +65,7 @@
                 <span>
                    لیست درخواست های ثبت شده
                 </span>
-                <span class="mr-auto bg-gray-100 text-center text-gray-800 justify-center text-sm font-semibold inline-flex items-center w-6 h-6 rounded-full dark:bg-gray-700 dark:text-gray-300">
-                    <span>{{$appliance}}</span>
-                </span>
+
             </a>
         </li>
         <li>
