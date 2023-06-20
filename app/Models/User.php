@@ -20,12 +20,14 @@ class User extends Authenticatable implements StatusInterface
      * @var array<int, string>
      */
     protected $fillable = [
+        'code',
         'fullname',
         'mobile',
         'mobile_second',
         'tel',
         'postal_code',
         'address',
+        'role',
         'national_id_number',
         'national_card_image_url',
     ];
@@ -38,16 +40,6 @@ class User extends Authenticatable implements StatusInterface
     protected $hidden = [
         'password',
     ];
-
-    /**
-     * The attributes that should be cast.
-     *
-     * @var array<string, string>
-     */
-    protected $casts = [
-        'password' => 'hashed',
-    ];
-
 
     public const STATUS_CONFIRMED = 'STATUS_CONFIRMED';
     
@@ -62,8 +54,6 @@ class User extends Authenticatable implements StatusInterface
             'ROLE_CUSTOMER' => self::ROLE_CUSTOMER,
         ];
     }
-
-
     /**
      * @return mixed
      */
@@ -207,6 +197,13 @@ class User extends Authenticatable implements StatusInterface
     public function isProfileCompleted(): bool
     {
         return (bool)$this->status == 'STATUS_PENDING';
+    }
+
+    public function getLinkGotoAccount()
+    {
+        return $this->isCustomer() ? 
+                route('user.profile.edit') 
+                : route('dashboard.users.index');
     }
 
 }
