@@ -100,8 +100,13 @@
                         <label class="text-sm">عکس قبل از لیبل
                             <span class="inline-flex bg-red-500 w-1 h-1 rounded-full"></span>
                         </label>
-
-                            <label for="image_after_file"
+                        @if (false)
+                            <div class="w-32 h-32 mt-3 border rounded-lg overflow-hidden">
+                                <img class="w-full h-full objext-cover" src="{{ asset($user->national_card_image_url) }}"
+                                    srcset="">
+                            </div>
+                        @else
+                            <label for="national_card_image_path"
                                 class="mt-3 text-neutral-700  cursor-pointer border-2 border-gray-400 border-dashed px-3 py-1 transition-all duration-200 rounded">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 fill-current inline ml-1"
                                     viewBox="0 0 24 24">
@@ -111,9 +116,10 @@
                                 </svg>
                                 <small>بارگذاری عکس یا فایل مربوطه</small>
                             </label>
-                            <input type="file" id="image_after_file" name="image_after_file"
+                            <input type="file" id="national_card_image_path" name="national_card_image_path"
                                 class="hidden" />
-                        @error('image_after_file')
+                        @endif
+                        @error('national_card_image_path')
                             <small class="text-xs -translate-y-1 bg-rose-50 text-rose-500 rounded px-2 min-h-8 font-semibold">
                                 {{ $message }}
                             </small>
@@ -123,8 +129,13 @@
                         <label class="text-sm">عکس بعد از لیبل
                             <span class="inline-flex bg-red-500 w-1 h-1 rounded-full"></span>
                         </label>
-
-                            <label for="image_before_file"
+                        @if (false)
+                            <div class="w-32 h-32 mt-3 border rounded-lg overflow-hidden">
+                                <img class="w-full h-full objext-cover" src="{{ asset($user->national_card_image_url) }}"
+                                    srcset="">
+                            </div>
+                        @else
+                            <label for="national_card_image_path"
                                 class="mt-3 text-neutral-700  cursor-pointer border-2 border-gray-400 border-dashed px-3 py-1 transition-all duration-200 rounded">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 fill-current inline ml-1"
                                     viewBox="0 0 24 24">
@@ -134,10 +145,10 @@
                                 </svg>
                                 <small>بارگذاری عکس یا فایل مربوطه</small>
                             </label>
-                            <input type="file" id="image_before_file" name="image_before_file"
+                            <input type="file" id="national_card_image_path" name="national_card_image_path"
                                 class="hidden" />
-               
-                        @error('image_before_file')
+                        @endif
+                        @error('national_card_image_path')
                             <small class="text-xs -translate-y-1 bg-rose-50 text-rose-500 rounded px-2 min-h-8 font-semibold">
                                 {{ $message }}
                             </small>
@@ -173,7 +184,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @forelse ($appliances as $appliance)
+                            @forelse ($appliance as $appliance)
                                 <tr class="bg-white text-xs border-b border-b-line">
                                     <th scope="row" class="px-4 py-2 font-medium whitespace-nowrap">
                                         {{ $appliance->brand_name }}
@@ -228,7 +239,7 @@
                                     </td>
                                 </tr>
 
-                            @endforelse
+                            @forelse
 
                         </tbody>
                     </table>

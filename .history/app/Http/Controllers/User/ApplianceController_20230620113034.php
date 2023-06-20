@@ -54,7 +54,7 @@ class ApplianceController extends Controller
             request()->file('image_before_file') )
         ]);
 
-        $request->user()->appliances()->create($request->all());
+        $request->user()->appliances()->craete($request->all());
         alert()->success('اطلاعات با موفقیت بروزرسانی شد');
         return redirect()->back();
     }

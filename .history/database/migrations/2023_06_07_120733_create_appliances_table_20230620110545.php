@@ -35,12 +35,12 @@ return new class extends Migration
             $table->string('cost_amount')
                 ->nullable();
 
-            $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')
-                ->references('id')
-                ->on('users')
-                ->onDelete('cascade')
-                ->onUpdate('cascade');
+                $table->unsignedBigInteger('user_id');
+                $table->foreign('user_id')
+                    ->references('id')
+                    ->on('users')
+                    ->onDelete('cascade')
+                    ->onUpdate('cascade');
 
             $table->timestamps();
         });

@@ -8,12 +8,10 @@ use App\Models\Brand;
 use App\Models\Group;
 use App\Models\Product;
 use App\Models\Variant;
-use App\Traits\Uploadable;
 use Illuminate\Http\Request;
 
 class ApplianceController extends Controller
 {
-    use Uploadable;
     /*
      * Display a listing of the resource.
      *
@@ -54,7 +52,7 @@ class ApplianceController extends Controller
             request()->file('image_before_file') )
         ]);
 
-        $request->user()->appliances()->create($request->all());
+        $request->user()->appliances()->craete($request->all());
         alert()->success('اطلاعات با موفقیت بروزرسانی شد');
         return redirect()->back();
     }

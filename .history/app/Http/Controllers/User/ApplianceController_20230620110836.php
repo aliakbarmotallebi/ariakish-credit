@@ -8,12 +8,10 @@ use App\Models\Brand;
 use App\Models\Group;
 use App\Models\Product;
 use App\Models\Variant;
-use App\Traits\Uploadable;
 use Illuminate\Http\Request;
 
 class ApplianceController extends Controller
 {
-    use Uploadable;
     /*
      * Display a listing of the resource.
      *
@@ -21,18 +19,16 @@ class ApplianceController extends Controller
      */
     public function index(Request $request)
     {
-        $appliances =  $request->user()->appliances;
         return view('panel.appliances', [
             'brands' => Brand::enables()->get(),
             'groups' => Group::enables()->get(),
             'variants' => Variant::enables()->take(1)->get(),
             'products' => Product::enables()->get(),
-            'appliances' => $appliances
         ]);
     }
 
 
-    public function store(Request $request)
+    public function update(Request $request)
     {
         $user = $request->validate([
             'brand_name' => 'required|string',
@@ -48,13 +44,12 @@ class ApplianceController extends Controller
             'image_after_url' => $this->upload(
             request()->file('image_after_file') )
         ]);
-
         $request->merge([
             'image_before_url' => $this->upload(
             request()->file('image_before_file') )
         ]);
 
-        $request->user()->appliances()->create($request->all());
+        $request->user()->appliances()->craete($request->all());
         alert()->success('اطلاعات با موفقیت بروزرسانی شد');
         return redirect()->back();
     }
