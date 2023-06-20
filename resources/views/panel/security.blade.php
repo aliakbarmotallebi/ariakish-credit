@@ -7,7 +7,7 @@
 		</div>
 	</header>
 	<main class="min-h-[calc(100vh_-_7rem)] container mx-auto">
-		<div class="max-w-md bg-white mx-auto p-6 rounded-xl shadow-md -translate-y-8">
+		<div class="max-w-md bg-white p-6 rounded-xl shadow-md -translate-y-8 mx-4 md:mx-auto">
 			<div class="flex flex-col items-center justify-center py-5">
 				<svg width="101" height="36" viewbox="0 0 101 36" fill="none" xmlns="http://www.w3.org/2000/svg">
 					<path d="M23.6388 15.0335H13.6082V12.1638C13.6137 11.8169 13.6895 11.4744 13.8313 11.1562C13.9731 10.838 14.1781 10.5503 14.4345 10.3098L16.9628 7.83515L17.1032 7.69006V11.656H19.1027C19.4597 11.6607 19.8121 11.7343 20.1397 11.8727C20.4673 12.011 20.7636 12.2114 21.0114 12.4621L23.6388 15.0335Z" fill="#042F2E"/>
@@ -49,7 +49,7 @@
 				</form>
 			</div>
 		</div>
-		<div class="text-center absolute bottom-0 left-1/2 -translate-x-1/2 z-0 max-w-lg py-5 border-t border-t-gray-200">
+		<div class="text-center absolute bottom-0 left-1/2 -translate-x-1/2 z-0 max-w-lg py-5 border-t border-t-gray-200 hidden md:block">
 			<div class="flex gap-5 text-gray-400 pt-1 text-base font-semibold leading-7">
 				<div class="font-semibold text-xs whitespace-nowrap">
 					کارت

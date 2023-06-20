@@ -5,7 +5,7 @@
 <x-layout.cart title="لیست درخواست ها" >
     <x-slot name="header" class="!p-0"></x-slot>
     <x-slot name="content">
-        <form class="grid grid-cols-6 gap-5 p-5">   
+        <form class="grid lg:grid-cols-3 xl:grid-cols-6 gap-5 p-5">   
             <div>
                 <label for="mobile" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
                     شماره همراه
@@ -27,7 +27,7 @@
                 <input type="text" id="fullname" name="fullname" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" 
                 placeholder="بهنام اکبری">
             </div>
-            <div class="mt-7">
+            <div class="mt-7 flex">
                 <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">
                     جستجو کن
                 </button>
@@ -36,7 +36,8 @@
                 </a>
             </div>
         </form>
-        <x-layout.table>
+        <div class="w-full relative overflow-auto">
+            <x-layout.table>
             <x-slot name="header">
                 <tr>
                     <th scope="col" class="px-6 py-3"></th>
@@ -89,6 +90,7 @@
                 @endforeach
             </x-slot>
         </x-layout.table>
+        </div>
     </x-slot>
     <x-slot name="footer" class="!p-2">
         {!! $appliances->links('pagination::tailwind') !!}

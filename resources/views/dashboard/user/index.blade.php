@@ -27,7 +27,7 @@
                     <input type="text" id="fullname" name="fullname" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" 
                     placeholder="بهنام اکبری">
                 </div>
-                <div class="mt-7">
+                <div class="mt-7 flex">
                     <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">
                         جستجو کن
                     </button>
@@ -40,7 +40,7 @@
     </x-slot>
     <x-slot name="content">
         @foreach ($users as $user)
-  <div class="flex-grow flex px-6 py-6 text-grey-100 justify-between items-center border-b space-x-3">
+  <div class="flex-grow flex px-6 py-6 text-grey-100 justify-between items-center border-b lg:w-[610px] xl:w-full overflow-x-auto space-x-3">
       <div class="whitespace-nowrap flex items-center max-w-xs w-full">
           <div class="rounded-full bg-gray-100 pl-4 inline-flex items-center ">
               <div

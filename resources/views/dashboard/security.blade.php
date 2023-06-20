@@ -4,7 +4,7 @@
 	<form method="POST">
 		@csrf
 		<section
-			class="mx-auto max-w-sm text-center">
+			class="max-w-sm text-center mx-4 md:mx-auto">
 			<div class="space-y-4">
 				<header class="mb-3 text-2xl font-bold">
 					<span class="text-xl text-white pb-10 w-full block text-center">ورود به حساب سامانه مدیریت تعمیرات</span>

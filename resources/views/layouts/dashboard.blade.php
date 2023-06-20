@@ -31,8 +31,8 @@
                     </span>
                     خوش آمدید
                 </div>
-                <div class="mr-auto">
-                    <a href="/logout" class="text-sm focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg px-5 py-2.5 mr-2 mb-2">
+                <div>
+                    <a href="/logout" class="text-xs md:text-sm focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg px-2.5 md:px-5 py-2.5 mr-2 mb-2">
                         خروج از سیستم 
                     </a>
                 </div>

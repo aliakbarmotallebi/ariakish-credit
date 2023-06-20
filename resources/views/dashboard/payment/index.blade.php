@@ -36,7 +36,7 @@
                     <input type="text" id="fullname" name="fullname" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" 
                     placeholder="بهنام اکبری">
                 </div>
-                <div class="mt-7">
+                <div class="mt-7 flex">
                     <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">
                         جستجو کن
                     </button>
@@ -48,6 +48,7 @@
         </div>
     </x-slot>
     <x-slot name="content">
+        <div class=" relative overflow-auto md:w-[702px] lg:w-[670px]  xl:w-full">
         <x-layout.table class="!mt-0">
             <x-slot name="header">
                 <tr>
@@ -130,6 +131,7 @@
                 </tr>
             </x-slot>
         </x-layout.table>
+</div>
     </x-slot>
     <x-slot name="footer" class="p-3">
         {!! $payments['List']->links('pagination::tailwind') !!}
