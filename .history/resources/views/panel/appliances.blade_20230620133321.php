@@ -195,7 +195,7 @@
                                         <span>تومان</span>
                                     </td>
                                     <td class="px-5 py-4">
-                                        <a target="_blank" href="{{ asset($appliance->image_after_url) }}" class="text-blue-500 underline">
+                                        <a href="{{ asset($appliance->image_after_url) }}" class="text-blue-500 underline">
                                             <svg class="inline fill-current w-4 h-4 ml-1" viewBox="0 0 20 20"
                                                 fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path
@@ -206,7 +206,7 @@
                                         </a>
                                     </td>
                                     <td class="px-5 py-4">
-                                        <a target="_blank" href="{{ asset($appliance->image_before_url) }}" class="text-blue-500 underline">
+                                        <a href="{{ asset($appliance->image_before_url) }}" class="text-blue-500 underline">
                                             <svg class="inline fill-current w-4 h-4 ml-1" viewBox="0 0 20 20"
                                                 fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path
