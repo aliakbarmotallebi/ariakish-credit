@@ -1,7 +1,7 @@
 @extends('layouts.user')
 @section('title', 'مدیریت  پیش سفارش ها')
 @section('content')
-    <div class="px-20 py-16">
+    <div class="px-4 md:px-8 lg:px-12 xl:px-20 py-16">
         <div class="border rounded-xl">
             <div class="bg-primary h-12 rounded-t-xl relative py-8">
                 <div
@@ -13,8 +13,8 @@
                     </svg>
                 </div>
             </div>
-            <div class="p-10 pb-2">
-                <div class="flex items-center my-2 p-4 mb-4 text-sm text-blue-800 rounded-lg bg-blue-50 dark:bg-gray-800 dark:text-blue-400" role="alert">
+            <div class="p-5 xl:p-10 pb-2">
+                <div class="flex flex-col xl:flex-row gap-4 items-center my-2 p-4 mb-4 text-sm text-blue-800 rounded-lg bg-blue-50 dark:bg-gray-800 dark:text-blue-400" role="alert">
                     <div>
                         <span class="font-medium">
                             <svg xmlns="http://www.w3.org/2000/svg" class="inline ml-1 stroke-current" width="24" height="24" fill="none" viewBox="0 0 24 24">
@@ -26,20 +26,20 @@
                         {{ number_format($user->balance()) }}
                         تومان
                     </div>
-                    <a href="{{ route('user.wallets.index') }}" class="py-2.5 px-5 mr-auto text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="inline ml-2 stroke-current" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                    <a href="{{ route('user.wallets.index') }}" class="p-2.5  md:px-5 xl:mr-auto text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="inline ml-1 md:ml-2 stroke-current" width="24" height="24" fill="none" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M18 20H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2Z" clip-rule="evenodd"/>
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v8m4-4H8"/>
                           </svg>
-                        شارژ کیف پول
+                        <span>شارژ کیف پول</span>
                     </a>
                   </div>
-                <div class="my-2 flex items-center p-4 text-sm text-gray-800 rounded-lg bg-gray-50 dark:bg-gray-800 dark:text-gray-300" role="alert">
-                    <span class="font-medium ml-2">
+                <div class="my-2 flex flex-col gap-4 xl:gap-0 xl:flex-row items-center p-4 text-sm text-gray-800 rounded-lg bg-gray-50 dark:bg-gray-800 dark:text-gray-300" role="alert">
+                    <span class="font-medium xl:ml-2">
                     کاربر گرامی !    
                     </span> 
                     لطفا به تکمیل مشخصات فردی اقدام نمایید.
-                    <div class="mr-auto">
+                    <div class="xl:mr-auto">
                         @if ($user->isConfirmedUser())
                         <span class="bg-green-100 text-green-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-green-900 dark:text-red-300">
                             <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 inline ml-1 fill-current" viewBox="0 0 24 24"><path d="M11.602 13.7599L13.014 15.1719L21.4795 6.7063L22.8938 8.12051L13.014 18.0003L6.65 11.6363L8.06421 10.2221L10.189 12.3469L11.6025 13.7594L11.602 13.7599ZM11.6037 10.9322L16.5563 5.97949L17.9666 7.38977L13.014 12.3424L11.6037 10.9322ZM8.77698 16.5873L7.36396 18.0003L1 11.6363L2.41421 10.2221L3.82723 11.6352L3.82604 11.6363L8.77698 16.5873Z"></path></svg>
@@ -53,7 +53,7 @@
                         @endif
                     </div>
                 </div>
-                <form class="grid grid-cols-2 gap-3" action="{{ route('user.profile.update') }}" method="POST" enctype="multipart/form-data">
+                <form class="flex flex-col md:grid md:grid-cols-2 gap-3 relative" action="{{ route('user.profile.update') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
                     <div class="flex flex-col">

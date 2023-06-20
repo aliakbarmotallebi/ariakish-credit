@@ -1,7 +1,7 @@
 @extends('layouts.user')
 @section('title', 'مدیریت پیش سفارش ها')
 @section('content')
-    <div class="px-20 py-10">
+    <div class="px-4 md:px-8 lg:px-12 xl:px-20 py-16">
         <div class="space-y-8">
             <form action="{{ route('user.payments.request') }}" method="POST">
             @csrf
@@ -93,7 +93,7 @@
             </form>
             <p class="mb-3">لیست تراکنش های کیف پول</p>
             <div class="card border rounded-lg overflow-hidden">
-                <div class="relative overflow-x-auto">
+                <div class="relative 4sm:w-[288px] 3sm:w-[343px] 2sm:w-[393px] sm:w-[608px] md:w-full lg:w-[584px] xl:w-full  overflow-x-auto">
                     <table class="w-full text-center">
                         <thead
                             class="text-xs border-b border-b-line text-neutral-700 font-bold uppercase bg-neutral-50 whitespace-nowrap">

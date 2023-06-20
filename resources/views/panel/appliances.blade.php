@@ -1,14 +1,15 @@
 @extends('layouts.user')
 @section('title', 'مدیریت پیش سفارش ها')
 @section('content')
-    <div class="px-20 py-10">
+    <div class="px-4 md:px-8 lg:px-12 xl:px-20 py-16">
     @if ($appliances->count() <= 4)
         <div>
             <p class="mb-3">ایجاد کارت</p>
             <div class="card  border rounded-lg overflow-hidden p-5">
-                <form class="grid grid-cols-3 gap-5 items-stretch" action="" enctype="multipart/form-data" method="POST">
+                <form  action="" enctype="multipart/form-data" method="POST">
                     @csrf
-                    <div>
+                    <div class="flex flex-col lg:grid lg:grid-cols-3 gap-5" >
+                        <div class="w-full">
                         <label for="role"
                             class="@error('brand_name') error-label @enderror block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">
                             برند
@@ -30,7 +31,7 @@
                         @enderror
                     </div>
 
-                    <div wire:ignore>
+                    <div class="w-full">
                         <label for="role"
                             class="@error('group_name') error-label @enderror  block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">
                             گروه
@@ -52,7 +53,7 @@
                         @enderror
                     </div>
 
-                    <div wire:ignore>
+                    <div class="w-full">
                         <label for="role"
                             class="@error('product_name') error-label @enderror block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">
                             محصول
@@ -74,7 +75,7 @@
                         @enderror
                     </div>
 
-                    <div wire:ignore>
+                    <div class="w-full">
                         <label for="role"
                             class="@error('variant_name') error-label @enderror block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">
                             مدل
@@ -150,6 +151,7 @@
                             افزودن دستگاه جدید
                         </button>
                     </div>
+                    </div>
                 </form>
             </div>
         </div>
@@ -157,19 +159,19 @@
         <div>
             <p class="mb-3 mt-6">لیست کارت ها</p>
             <div class="card  border rounded-lg overflow-hidden">
-                <div class="relative overflow-x-auto">
-                    <table class="w-full text-center">
+                <div class="relative 4sm:w-[288px] 3sm:w-[343px] 2sm:w-[393px] sm:w-[608px] md:w-full  overflow-x-auto">
+            <table class="w-full text-sm text-center text-gray-500 whitespace-nowrap ">
                         <thead class="text-sm border-b text-neutral-700 border-b-line font-bold uppercase bg-gray-50">
                             <tr>
-                                <th scope="col" class="px-5 py-4">برند</th>
-                                <th scope="col" class="px-5 py-4">گروه</th>
-                                <th scope="col" class="px-5 py-4">محصول</th>
-                                <th scope="col" class="px-5 py-4">مدل</th>
-                                <th scope="col" class="px-5 py-4">قیمت</th>
-                                <th scope="col" class="px-5 py-4">
+                                <th class="px-5 py-4">برند</th>
+                                <th class="px-5 py-4">گروه</th>
+                                <th class="px-5 py-4">محصول</th>
+                                <th class="px-5 py-4">مدل</th>
+                                <th class="px-5 py-4">قیمت</th>
+                                <th class="px-5 py-4">
                                     عکس قبل از لیبل
                                 </th>
-                                <th scope="col" class="px-5 py-4">
+                                <th class="px-5 py-4">
                                     عکس بعد از لیبل
                                 </th>
                             </tr>
