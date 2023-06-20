@@ -33,92 +33,75 @@
     </div>
     <ul class="mt-12 text-sm space-y-2">
         <li>
-            <a @class([
-                'bg-white/10' => _is_link_active('dashboard.users.index'),
-                'flex w-full h-full block hover:bg-white/10 transition-all duration-200 py-4 rounded-lg px-5',
-            ]) href="{{ route('dashboard.users.index') }}">
-                <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current inline ml-1" width="24" height="24"
-                    fill="none" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                        d="M3 18a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4m1-13.349a2.5 2.5 0 1 1 0 5m-4.595-4.655a3.401 3.401 0 1 1-4.81 4.81 3.401 3.401 0 0 1 4.81-4.81M17 13a4 4 0 0 1 4 4" />
-                </svg>
+            <a 
+                @class([
+                    'bg-white/10' => _is_link_active('dashboard.users.index'),
+                    'w-full h-full block hover:bg-white/10 transition-all duration-200 py-4 rounded-lg px-5',
+                ])
+                href="{{  route('dashboard.users.index') }}">
+                <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current inline ml-1" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 18a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4m1-13.349a2.5 2.5 0 1 1 0 5m-4.595-4.655a3.401 3.401 0 1 1-4.81 4.81 3.401 3.401 0 0 1 4.81-4.81M17 13a4 4 0 0 1 4 4"/>
+                  </svg>
                 <span>
                     مدیریت کاربران
-                </span>
-                <span class="mr-auto bg-gray-100 text-center text-gray-800 justify-center text-sm font-semibold inline-flex items-center w-6 h-6 rounded-full  dark:bg-gray-700 dark:text-gray-300">
-                    <span>{{ $user }}</span>
                 </span>
             </a>
         </li>
         <li>
-            <a @class([
+            <a  
+            @class([
                 'bg-white/10' => _is_link_active('dashboard.appliances.index'),
-                'flex w-full h-full block hover:bg-white/10 transition-all duration-200 py-4 rounded-lg px-5',
-            ]) href="{{ route('dashboard.appliances.index') }}">
-                <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current inline ml-1" width="24" height="24"
-                    fill="none" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                        d="M16.243 4.757a6 6 0 1 1-8.486 8.486 6 6 0 0 1 8.486-8.486" />
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                        d="M8 13.463V21l4-2 4 2v-7.537" />
-                </svg>
+                'w-full h-full block hover:bg-white/10 transition-all duration-200 py-4 rounded-lg px-5',
+            ]) href="{{  route('dashboard.appliances.index') }}">
+<svg xmlns="http://www.w3.org/2000/svg" class="stroke-current inline ml-1" width="24" height="24" fill="none" viewBox="0 0 24 24">
+    <path  stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16.243 4.757a6 6 0 1 1-8.486 8.486 6 6 0 0 1 8.486-8.486"/>
+    <path  stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 13.463V21l4-2 4 2v-7.537"/>
+  </svg>
                 <span>
-                   لیست درخواست های ثبت شده
+                    لیست دستگاه های ثبت شده
                 </span>
-                <span class="mr-auto bg-gray-100 text-center text-gray-800 justify-center text-sm font-semibold inline-flex items-center w-6 h-6 rounded-full dark:bg-gray-700 dark:text-gray-300">
-                    <span>{{$appliance}}</span>
-                </span>
+
             </a>
         </li>
         <li>
             <a @class([
                 'bg-white/10' => _is_link_active('dashboard.wallets.index'),
                 'w-full h-full block hover:bg-white/10 transition-all duration-200 py-4 rounded-lg px-5',
-            ]) href="{{ route('dashboard.wallets.index') }}">
-                <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current inline ml-1" width="24" height="24"
-                    fill="none" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                        d="m15.319 10.342-4.148 4.148-2.489-2.489" />
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                        d="M19.1 5.921a11.268 11.268 0 0 1-6.463-2.688.989.989 0 0 0-1.274 0A11.275 11.275 0 0 1 4.9 5.921a.988.988 0 0 0-.9.991v4.33c0 4.367 3.156 8.462 7.478 9.685.339.096.706.096 1.045 0C16.844 19.703 20 15.61 20 11.243v-4.33a.988.988 0 0 0-.9-.992Z"
-                        clip-rule="evenodd" />
-                </svg>
+            ]) href="{{  route('dashboard.wallets.index') }}">
+<svg xmlns="http://www.w3.org/2000/svg" class="stroke-current inline ml-1" width="24" height="24" fill="none" viewBox="0 0 24 24">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m15.319 10.342-4.148 4.148-2.489-2.489"/>
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.1 5.921a11.268 11.268 0 0 1-6.463-2.688.989.989 0 0 0-1.274 0A11.275 11.275 0 0 1 4.9 5.921a.988.988 0 0 0-.9.991v4.33c0 4.367 3.156 8.462 7.478 9.685.339.096.706.096 1.045 0C16.844 19.703 20 15.61 20 11.243v-4.33a.988.988 0 0 0-.9-.992Z" clip-rule="evenodd"/>
+  </svg>
                 <span>
                     تراکنش های کاربران
                 </span>
             </a>
         </li>
         <li>
-            <a @class([
+            <a    
+            @class([
                 'bg-white/10' => _is_link_active('dashboard.payments.index'),
                 'w-full h-full block hover:bg-white/10 transition-all duration-200 py-4 rounded-lg px-5',
-            ]) href="{{ route('dashboard.payments.index') }}">
-                <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current inline ml-1" width="24" height="24"
-                    fill="none" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                        d="M11 5h10m-10 7h10m-10 7h10" />
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                        d="M6 7H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1Zm0 7H4a1 1 0 0 1-1-1v-2a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1Zm0 7H4a1 1 0 0 1-1-1v-2a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1Z"
-                        clip-rule="evenodd" />
-                </svg>
+            ]) href="{{  route('dashboard.payments.index') }}">
+<svg xmlns="http://www.w3.org/2000/svg" class="stroke-current inline ml-1" width="24" height="24" fill="none" viewBox="0 0 24 24">
+    <path  stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M11 5h10m-10 7h10m-10 7h10"/>
+    <path  stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 7H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1Zm0 7H4a1 1 0 0 1-1-1v-2a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1Zm0 7H4a1 1 0 0 1-1-1v-2a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1Z" clip-rule="evenodd"/>
+  </svg>
                 <span>
                     پرداختی های کاربران
                 </span>
             </a>
         </li>
         <li>
-            <a @class([
+            <a    
+            @class([
                 'bg-white/10' => _is_link_active('dashboard.content.*'),
                 'w-full h-full block hover:bg-white/10 transition-all duration-200 py-4 rounded-lg px-5',
-            ]) href="{{ route('dashboard.content.brands') }}">
-                <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current inline ml-1" width="24" height="24"
-                    fill="none" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                        d="m19.818 13.797.05-.012a1.5 1.5 0 0 0 1.136-1.456v-.658a1.5 1.5 0 0 0-1.137-1.456l-.049-.012A1.658 1.658 0 0 1 18.8 7.742l.02-.034a1.503 1.503 0 0 0-.22-1.842l-.466-.465a1.5 1.5 0 0 0-1.833-.226l-.044.026a1.657 1.657 0 0 1-2.46-1.019l-.012-.049a1.5 1.5 0 0 0-1.456-1.136h-.658a1.5 1.5 0 0 0-1.456 1.136l-.012.05A1.658 1.658 0 0 1 7.742 5.2l-.035-.02a1.503 1.503 0 0 0-1.841.22l-.466.466A1.5 1.5 0 0 0 5.175 7.7l.025.042a1.658 1.658 0 0 1-1.018 2.461l-.05.013a1.5 1.5 0 0 0-1.136 1.455v.659a1.5 1.5 0 0 0 1.137 1.455l.048.013a1.658 1.658 0 0 1 1.02 2.46l-.026.043a1.5 1.5 0 0 0 .226 1.833l.465.466a1.5 1.5 0 0 0 1.833.226l.043-.026a1.658 1.658 0 0 1 2.46 1.018l.013.05a1.5 1.5 0 0 0 1.456 1.136h.659a1.5 1.5 0 0 0 1.455-1.136l.012-.049a1.658 1.658 0 0 1 2.46-1.02l.044.026a1.5 1.5 0 0 0 1.833-.225l.466-.466a1.5 1.5 0 0 0 .225-1.833l-.025-.043a1.658 1.658 0 0 1 1.018-2.46Z"
-                        clip-rule="evenodd" />
-                    <circle cx="12" cy="12.001" r="2.078" stroke-linecap="round" stroke-linejoin="round"
-                        stroke-width="1.5" />
-                </svg>
+            ]) href="{{  route('dashboard.content.brands') }}">
+<svg xmlns="http://www.w3.org/2000/svg"  class="stroke-current inline ml-1" width="24" height="24" fill="none" viewBox="0 0 24 24">
+    <path  stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m19.818 13.797.05-.012a1.5 1.5 0 0 0 1.136-1.456v-.658a1.5 1.5 0 0 0-1.137-1.456l-.049-.012A1.658 1.658 0 0 1 18.8 7.742l.02-.034a1.503 1.503 0 0 0-.22-1.842l-.466-.465a1.5 1.5 0 0 0-1.833-.226l-.044.026a1.657 1.657 0 0 1-2.46-1.019l-.012-.049a1.5 1.5 0 0 0-1.456-1.136h-.658a1.5 1.5 0 0 0-1.456 1.136l-.012.05A1.658 1.658 0 0 1 7.742 5.2l-.035-.02a1.503 1.503 0 0 0-1.841.22l-.466.466A1.5 1.5 0 0 0 5.175 7.7l.025.042a1.658 1.658 0 0 1-1.018 2.461l-.05.013a1.5 1.5 0 0 0-1.136 1.455v.659a1.5 1.5 0 0 0 1.137 1.455l.048.013a1.658 1.658 0 0 1 1.02 2.46l-.026.043a1.5 1.5 0 0 0 .226 1.833l.465.466a1.5 1.5 0 0 0 1.833.226l.043-.026a1.658 1.658 0 0 1 2.46 1.018l.013.05a1.5 1.5 0 0 0 1.456 1.136h.659a1.5 1.5 0 0 0 1.455-1.136l.012-.049a1.658 1.658 0 0 1 2.46-1.02l.044.026a1.5 1.5 0 0 0 1.833-.225l.466-.466a1.5 1.5 0 0 0 .225-1.833l-.025-.043a1.658 1.658 0 0 1 1.018-2.46Z" clip-rule="evenodd"/>
+    <circle cx="12" cy="12.001" r="2.078"  stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+  </svg>
                 <span>
                     تنظیمات سیستم
                 </span>

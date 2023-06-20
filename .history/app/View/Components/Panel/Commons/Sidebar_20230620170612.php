@@ -9,12 +9,17 @@ use Illuminate\View\Component;
 
 class Sidebar extends Component
 {
+    public $user = 0;
+
+    public $appliance = 0;
+
     /**
      * Create a new component instance.
      */
     public function __construct()
     {
- 
+        $this->user = User::where('status', 'STATUS_PENDING')->count();
+        $this->appliance = User::where('status', 'STATUS_PENDING')->count();
     }
 
     /**
