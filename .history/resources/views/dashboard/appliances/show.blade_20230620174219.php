@@ -10,6 +10,7 @@
         <x-layout.table>
             <x-slot name="header">
                 <tr>
+                    <th scope="col" class="px-6 py-3"></th>
                     <th scope="col" class="px-6 py-3">
                         نام و نام خانوادگی
                     </th>
@@ -27,16 +28,16 @@
             <x-slot name="content">
                 <tr class="bg-white border-b hover:bg-gray-100">
                     <td scope="row" class="px-6 py-4 text-center text-base">
-                        {{ $user->fullname  }}
+                        {{ $items->fullname  }}
                     </td>
                     <td scope="row" class="px-6 py-4 text-center text-base">
-                        {{ $user->mobile }}
+                        {{ $items->mobile }}
                     </td>
                     <td scope="row" class="px-6 py-4 text-center text-base">
-                        {{ $user->national_id_number  }}
+                        {{ $items->national_id_number  }}
                     </td>
                     <td scope="row" class="px-6 py-4 text-center text-base">
-                        {{ $user->code  }}
+                        {{ $items->code  }}
                     </td>     
                 </tr>
             </x-slot>
@@ -63,7 +64,7 @@
                 </tr>
             </x-slot>
             <x-slot name="content">
-                @foreach ($user->appliances as $item)
+                @foreach ($items as $item)
                     <tr class="bg-white border-b hover:bg-gray-100">
                         <th class="text-center text-base px-6 py-4 font-medium whitespace-nowrap">
                             {{ $loop->iteration }}
