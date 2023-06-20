@@ -17,7 +17,7 @@
                 <div class="flex items-center my-2 p-4 mb-4 text-sm text-blue-800 rounded-lg bg-blue-50 dark:bg-gray-800 dark:text-blue-400" role="alert">
                     <div>
                         <span class="font-medium">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="inline ml-1 stroke-current" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="inline ml-1 fill-current" width="24" height="24" fill="none" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 21.004H4.996a2 2 0 0 1-2-2.001V4.997a2 2 0 0 1 2-2h14.006a2 2 0 0 1 2 2V10M2.996 7.998h18.008m-4.002 7.654v3.144m1.572-1.572H15.43"/>
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.003 21.004H15a2 2 0 0 1-2-2.001V15a2 2 0 0 1 2-2h4.002a2 2 0 0 1 2 2v4.002a2 2 0 0 1-2 2Z" clip-rule="evenodd"/>
                               </svg>
