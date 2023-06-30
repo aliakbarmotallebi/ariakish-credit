@@ -8,9 +8,14 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    @livewireStyles
+    <style>
+        [x-cloak] { display: none; }
+      </style>
 </head>
 <body>
     {{ $slot }}
+    @livewireScripts
     @include('sweetalert::alert')
     @stack('scripts')
     <script>

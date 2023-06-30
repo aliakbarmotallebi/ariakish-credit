@@ -17,6 +17,7 @@
         "alpinejs": "^3.12.2",
         "jquery": "^3.6.4",
         "num2persian": "^3.2.2",
-        "select2": "^4.1.0-rc.0"
+        "select2": "^4.1.0-rc.0",
+        "sweetalert2": "^11.7.12"
     }
 }

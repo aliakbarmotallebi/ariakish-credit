@@ -18,9 +18,12 @@ return new class extends Migration
             $table->id();
             $table->string('fullname')
                 ->nullable();
-            $table->string('code')->unique();
-            $table->string('mobile', 11)->nullable();
+            $table->string('code')->nullable();
+            $table->string('mobile', 11)->unique();
             $table->string('mobile_second', 11)->nullable();
+            $table->string('referral_code')->nullable();
+            $table->string('verify_code')->nullable();
+            $table->timestamp('code_expired_at')->nullable();
             $table->string('password');
             $table->string('tel', 15)->nullable();
             $table->string('national_id_number', 10)->nullable();
@@ -38,14 +41,13 @@ return new class extends Migration
                     'ROLE_CUSTOMER'
                 ])->default('ROLE_CUSTOMER');
             $table->rememberToken();
-            $table->unique(['national_id_number','code']);
             $table->timestamps();
         });
 
 
         $user = new User;
         $user->fullname = 'Admin';
-        $user->code = 'admin';
+        $user->code = '123456789';
         $user->mobile = '09121779471';
         $user->password = '123456789';
         $user->role = 'ROLE_ADMIN';

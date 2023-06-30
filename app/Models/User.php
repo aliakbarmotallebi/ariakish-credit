@@ -5,6 +5,8 @@ namespace App\Models;
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 
 use App\Models\Contracts\StatusInterface;
+use App\Models\Contracts\SmsVerification;
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -12,7 +14,7 @@ use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable implements StatusInterface
 {
-    use HasApiTokens, HasFactory, Notifiable;
+    use HasApiTokens, HasFactory, Notifiable, SmsVerification;
 
     /**
      * The attributes that are mass assignable.
@@ -30,6 +32,7 @@ class User extends Authenticatable implements StatusInterface
         'role',
         'national_id_number',
         'national_card_image_url',
+        'password'
     ];
 
     /**
@@ -39,6 +42,15 @@ class User extends Authenticatable implements StatusInterface
      */
     protected $hidden = [
         'password',
+    ];
+
+        /**
+     * The attributes that should be cast.
+     *
+     * @var array<string, string>
+     */
+    protected $casts = [
+        'code_expired_at' => 'datetime:Y-m-d H:00',
     ];
 
     public const STATUS_CONFIRMED = 'STATUS_CONFIRMED';
@@ -88,6 +100,19 @@ class User extends Authenticatable implements StatusInterface
         $this->status = $status;
         $this->save();
       
+    }
+
+
+    public function callToVerify()
+    {
+        $code = random_int(100000, 999999);
+
+        $this->forceFill([
+            'verify_code' => $code,
+            'code_expired_at' => Carbon::now()
+        ])->saveQuietly();
+
+        $this->sendCode($code);
     }
 
     public function isConfirmedUser()
