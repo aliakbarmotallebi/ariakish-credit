@@ -32,14 +32,14 @@ class ProfileController extends Controller
     {
         $user = $request->validate([
             'fullname' => 'required|string',
-            'code' => 'required|unique:users,code',
+            'code' => 'required|exists:users,code',
             'referral_code' => 'nullable',
             'mobile_second' => 'nullable|regex:/(09)[0-9]{9}/|numeric|digits:11',
             'tel' => 'nullable|numeric|digits:11',
             'postal_code' => 'required|numeric|digits:10',
             'address' => 'required|string',
             'national_id_number' => 'required|digits:10|string',
-            'national_card_image_path' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:1048',
+            'national_card_image_path' => 'sometimes|image|mimes:jpeg,png,jpg,gif,svg|max:1048',
         ]);
 
         if($request->has('national_card_image_path')){

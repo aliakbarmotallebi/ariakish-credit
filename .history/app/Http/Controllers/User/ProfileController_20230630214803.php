@@ -39,7 +39,7 @@ class ProfileController extends Controller
             'postal_code' => 'required|numeric|digits:10',
             'address' => 'required|string',
             'national_id_number' => 'required|digits:10|string',
-            'national_card_image_path' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:1048',
+            'national_card_image_path' => 'sometimes|image|mimes:jpeg,png,jpg,gif,svg|max:1048',
         ]);
 
         if($request->has('national_card_image_path')){

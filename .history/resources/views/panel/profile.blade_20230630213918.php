@@ -62,13 +62,6 @@
                     @csrf
                     @method('PUT')
                     <div class="flex flex-col">
-                        <label class="text-sm" for="mobile">
-                            شماره همراه
-                        </label>
-                        <input type="text" value="{{ old('mobile', $user->mobile) }}"
-                            class="bg-gray-300 border mt-3 border-line rounded-md py-1.5 px-4" disabled />
-                        </div>
-                    <div class="flex flex-col">
                         <label class="text-sm" for="fullname"> نام 
                             <span class="inline-flex bg-red-500 w-1 h-1 rounded-full"></span>
                         </label>
@@ -82,7 +75,7 @@
                     </div>
                     <div class="flex flex-col">
                         <label class="text-sm" for="national-code">
-                          کدملی
+                            شماره کارت وی آی پی
                             <span class="inline-flex bg-red-500 w-1 h-1 rounded-full"></span>
                         </label>
                         <input type="text" id="national_id_number" name="national_id_number" value="{{ old('national_id_number', $user->national_id_number) }}"
@@ -94,13 +87,12 @@
                             @enderror
                         </div>
                         <div class="flex flex-col">
-                            <label class="text-sm" for="code"> 
-                                شماره کارت وی آی پی 
+                            <label class="text-sm" for="fullname"> نام 
                                 <span class="inline-flex bg-red-500 w-1 h-1 rounded-full"></span>
                             </label>
-                            <input type="text" id="code" name="code" value="{{ old('code', $user->code) }}"
+                            <input type="text" id="fullname" name="fullname" value="{{ old('fullname', $user->fullname) }}"
                                 class="border mt-3 border-line rounded-md py-1.5 focus:outline-none focus-within:border-textMain px-4 bg-main/50" />
-                                @error('code')
+                                @error('fullname')
                                 <small class="text-xs -translate-y-1 bg-rose-50 text-rose-500 rounded px-2 min-h-8 font-semibold">
                                     {{ $message }}
                                 </small>
@@ -118,7 +110,19 @@
                             </small>
                             @enderror
                         </div>
-
+                    <div class="flex flex-col">
+                        <label class="text-sm" for="mobile">
+                            شماره همراه
+                            <span class="inline-flex bg-red-500 w-1 h-1 rounded-full"></span>
+                        </label>
+                        <input type="text" id="mobile" name="mobile" value="{{ old('mobile', $user->mobile) }}"
+                            class="border mt-3 border-line rounded-md py-1.5 focus:outline-none focus-within:border-textMain px-4 bg-main/50" />
+                            @error('mobile')
+                            <small class="text-xs -translate-y-1 bg-rose-50 text-rose-500 rounded px-2 min-h-8 font-semibold">
+                                {{ $message }}
+                            </small>
+                            @enderror
+                        </div>
                     <div class="flex flex-col">
                         <label class="text-sm" for="mobile_second">
                             شماره همراه 2
@@ -132,12 +136,12 @@
                             @enderror
                         </div>
                         <div class="flex flex-col">
-                            <label class="text-sm" for="referral_code">
+                            <label class="text-sm" for="national-code">
                                 کد معرف
                             </label>
-                            <input type="text" id="referral_code" name="referral_code" value="{{ old('referral_code', $user->referral_code) }}"
+                            <input type="text" id="national_id_number" name="national_id_number" value="{{ old('national_id_number', $user->national_id_number) }}"
                                 class="border mt-3 border-line rounded-md py-1.5 focus:outline-none focus-within:border-textMain px-4 bg-main/50" />
-                                @error('referral_code')
+                                @error('national_id_number')
                                 <small class="text-xs -translate-y-1 bg-rose-50 text-rose-500 rounded px-2 min-h-8 font-semibold">
                                     {{ $message }}
                                 </small>

@@ -22,24 +22,20 @@ class ProfileController extends Controller
     public function rules(Request $request)
     {
         $user = $request->user();
-        if($user->status = "STATUS_NEW"){
-            return view('panel.rules');
-        }
-        return to_route('user.profile.edit');
+        return view('panel.rules');
     }
 
     public function update(Request $request)
     {
         $user = $request->validate([
             'fullname' => 'required|string',
-            'code' => 'required|unique:users,code',
-            'referral_code' => 'nullable',
+            'mobile' => 'required|regex:/(09)[0-9]{9}/|numeric|digits:11',
             'mobile_second' => 'nullable|regex:/(09)[0-9]{9}/|numeric|digits:11',
             'tel' => 'nullable|numeric|digits:11',
             'postal_code' => 'required|numeric|digits:10',
             'address' => 'required|string',
             'national_id_number' => 'required|digits:10|string',
-            'national_card_image_path' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:1048',
+            'national_card_image_path' => 'sometimes|image|mimes:jpeg,png,jpg,gif,svg|max:1048',
         ]);
 
         if($request->has('national_card_image_path')){

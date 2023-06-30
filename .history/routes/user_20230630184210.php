@@ -9,11 +9,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/profile/edit', [ProfileController::class, 'edit'])
 ->withoutMiddleware(['confirmed.user'])    
 ->name('profile.edit');
-
-Route::get('rules', [ProfileController::class, 'rules'])
+Route::put('rules', [ProfileController::class, 'rules'])
 ->withoutMiddleware(['confirmed.user'])    
 ->name('rules');
-
 Route::put('profile', [ProfileController::class, 'update'])
 ->withoutMiddleware(['confirmed.user'])    
 ->name('profile.update');
