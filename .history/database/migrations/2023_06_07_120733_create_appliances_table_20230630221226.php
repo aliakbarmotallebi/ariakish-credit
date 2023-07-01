@@ -32,6 +32,9 @@ return new class extends Migration
             $table->string('image_before_url')
                     ->nullable();
 
+            $table->string('cost_amount')
+                ->nullable();
+
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')
                 ->references('id')

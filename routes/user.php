@@ -3,7 +3,9 @@
 use App\Http\Controllers\User\ApplianceController;
 use App\Http\Controllers\User\PaymentController;
 use App\Http\Controllers\User\ProfileController;
+use App\Http\Controllers\User\RequestRepairController;
 use App\Http\Controllers\User\WalletController;
+use App\Models\RequestRepair;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/profile/edit', [ProfileController::class, 'edit'])
@@ -20,6 +22,12 @@ Route::put('profile', [ProfileController::class, 'update'])
 
 Route::get('/appliances', [ApplianceController::class, 'index'])
     ->name('appliances.index');
+
+Route::get('request/repair/{appliance}', [RequestRepairController::class, 'index'])
+    ->name('repair.index');
+
+Route::post('request/repair/{appliance}', [RequestRepairController::class, 'store'])
+    ->name('repair.store');
 
 Route::post('/appliances', [ApplianceController::class, 'store'])
     ->name('appliances.store');

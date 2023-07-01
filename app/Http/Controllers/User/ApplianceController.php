@@ -39,14 +39,7 @@ class ApplianceController extends Controller
             'product_name' => 'required|string',
             'group_name' => 'required|string',
             'variant_name' => 'required|string',
-            'image_after_file' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:1048',
             'image_before_file' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:1048',
-        ]);
-
-
-        $request->merge([
-            'image_after_url' => $this->upload(
-            request()->file('image_after_file') )
         ]);
 
         $request->merge([

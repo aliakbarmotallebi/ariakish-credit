@@ -25,8 +25,4 @@ class Appliance extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function requestRepairs(){
-        return $this->hasMany(RequestRepair::class);
-    }
-
 }

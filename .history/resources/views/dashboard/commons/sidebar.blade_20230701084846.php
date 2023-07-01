@@ -55,7 +55,7 @@
             <a @class([
                 'bg-white/10' => _is_link_active('dashboard.repair.index'),
                 'flex w-full h-full block hover:bg-white/10 transition-all duration-200 py-4 rounded-lg px-5',
-            ]) href="{{ route('dashboard.repair.index') }}">
+            ]) href="{{ route('dashboard.appliances.index') }}">
                 <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current inline ml-1" width="24" height="24"
                     fill="none" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"

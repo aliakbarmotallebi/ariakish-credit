@@ -50,6 +50,9 @@
                     <th scope="col" class="px-6 py-3">
                         شماره همراه کاربر
                     </th>
+                    <th scope="col" class="px-6 py-3">
+                       مجموع قیمت تعمیرات
+                    </th>
                     <th scope="col" class="px-6 py-3"></th>
                 </tr>
             </x-slot>
