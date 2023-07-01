@@ -25,7 +25,7 @@ services:
         image: nginx:alpine
         restart: unless-stopped
         ports: 
-            - 9002:80
+            - 8180:80
         volumes: 
             - ./:/var/www
             - ./docker/nginx/:/etc/nginx/conf.d/
@@ -44,7 +44,7 @@ services:
             MYSQL_PASSWORD: ${DB_PASSWORD}
             MYSQL_USER: ${DB_USERNAME}
         ports: 
-            - 3313:3306
+            - 3312:3306
         networks: 
             - ariakish-credit
             - shahrvand-mohajer-server_mamp-shared
@@ -61,6 +61,7 @@ services:
   
     #PHPMYADMIN  Service
     phpmyadmin:
+      container_name: phpmyadmin
       image: phpmyadmin/phpmyadmin:latest
       environment:
         - PMA_HOST=mariadb
@@ -69,7 +70,7 @@ services:
         - UPLOAD_LIMIT= 102400000000
       restart: always
       ports:
-        - 9200:80
+        - 8181:80
       networks:
         - ariakish-credit
         - shahrvand-mohajer-server_mamp-shared

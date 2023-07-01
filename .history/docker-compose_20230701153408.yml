@@ -61,6 +61,7 @@ services:
   
     #PHPMYADMIN  Service
     phpmyadmin:
+      container_name: phpmyadmin
       image: phpmyadmin/phpmyadmin:latest
       environment:
         - PMA_HOST=mariadb
