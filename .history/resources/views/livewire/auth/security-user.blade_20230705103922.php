@@ -79,16 +79,12 @@
                 کدی که برای شما پیامک شد ارسال شد را وارد کنید.
             </div>
             <div>
-                <form>
+                <form wire:submit.prevent="verify">
                     <div>
-                        <div  class="flex justify-between items-center">
+                        <div>
                             <label for="code" class="text-sm font-bold">
                                 کد تاییدیه
                             </label>
-                            <button  wire:click="prevPage" class="text-blue-300 underline text-xs">
-                                اصلاح شماره تماس
-                            </button>
-                        </div>
                             <input type="text" wire:model="code" name="code"
                                 class="text-center  w-full border mt-3 border-line rounded-md py-2 focus:outline-none focus-within:border-textMain px-4" />
                             @error('code')
@@ -97,7 +93,10 @@
                                     {{ $message }}
                                 </small>
                             @enderror
-
+                        </div>
+                        <button  wire:click="prevPage" class="text-blue-300 ">
+                            اصلاح شماره تماس
+                        </button>
                     </div>
                     <div class="mt-4 text-center">
                         <div x-data="{

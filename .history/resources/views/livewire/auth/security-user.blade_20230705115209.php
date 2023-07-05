@@ -34,7 +34,7 @@
                 </div>
             </div>
         </div>
-        @if ($currentPage === 1)
+        @if ($currentPage === 2)
             <div class="text-center my-5 font-light text-sm">
                 لطفا برای ورود شماره همراه خود را در کادر پایین وارد کنید.
             </div>
@@ -74,18 +74,18 @@
                     </div>
                 </form>
             </div>
-        @elseif($currentPage === 2)
+        @elseif($currentPage === 1)
             <div class="text-center my-5 font-light text-sm">
                 کدی که برای شما پیامک شد ارسال شد را وارد کنید.
             </div>
             <div>
-                <form>
+                <form wire:submit.prevent="verify">
                     <div>
                         <div  class="flex justify-between items-center">
                             <label for="code" class="text-sm font-bold">
                                 کد تاییدیه
                             </label>
-                            <button  wire:click="prevPage" class="text-blue-300 underline text-xs">
+                            <button  wire:click="prevPage" class="text-blue-300 underline text-sm">
                                 اصلاح شماره تماس
                             </button>
                         </div>

@@ -79,7 +79,7 @@
                                     سال تولید
                                     <span class="inline-flex bg-red-500 w-1 h-1 rounded-full"></span>
                                 </label>
-                                <?php $now = verta()->year ?>
+                                {{ $now = verta('Y') }}
                                 <select name="production_year"
                                     class="@error('production_year') error-input @enderror bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2">
                                     @for ($i = $now; $i >= 1384; $i--)

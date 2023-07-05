@@ -11,10 +11,10 @@
                             یکی از تعرفه های زیر انتخاب کنید
                         </div>
                         <div class="grid grid-cols-1 lg:grid-cols-3 gap-2 ">
-                            <label class="relative cursor-pointer">
-                                <input id="box-1" type="radio" name="amount" value="1" class="peer hidden">
+                            <label class="relative block">
+                                <input id="box-1" type="radio" name="suggest" class="peer hidden">
                                 <div for="box-1"
-                                    class="text-left pl-4 rounded-lg border-gray-200 border-2 peer-checked:bg-blue-50 peer-checked:border-blue-500 py-4 w-full text-sm font-medium text-gray-900">
+                                    class="text-left pl-4 rounded-lg border-gray-200 border-2 peer-checked:border-blue-500 py-4 w-full text-sm font-medium text-gray-900">
                                     <span class="font-semibold text-lg">
                                         {{ number_format('10000000') }}
                                         <span class="text-xs">
@@ -31,10 +31,10 @@
                                     </div>
                                 </div>
                             </label>
-                            <label class="relative cursor-pointer">
-                                <input id="box-2" type="radio" name="amount" value="2" class="peer hidden">
+                            <label class="relative block">
+                                <input id="box-2" type="radio" name="suggest" class="peer hidden">
                                 <div for="box-2"
-                                    class="text-left pl-4 rounded-lg border-gray-200 border-2 peer-checked:bg-blue-50 peer-checked:border-blue-500 py-4 w-full text-sm font-medium text-gray-900">
+                                    class="text-left pl-4 rounded-lg border-gray-200 border-2 peer-checked:border-blue-500 py-4 w-full text-sm font-medium text-gray-900">
                                     <span class="font-semibold text-lg">
                                         {{ number_format('20000000') }}
                                         <span class="text-xs">
@@ -51,10 +51,10 @@
                                     </div>
                                 </div>
                             </label>
-                            <label class="relative cursor-pointer">
-                                <input id="box-3" type="radio" name="amount" value="5" class="peer hidden">
+                            <label class="relative block">
+                                <input id="box-3" type="radio" name="suggest" class="peer hidden">
                                 <div for="box-3"
-                                    class="text-left pl-4 rounded-lg border-gray-200 border-2 peer-checked:bg-blue-50 peer-checked:border-blue-500 py-4 w-full text-sm font-medium text-gray-900">
+                                    class="text-left pl-4 rounded-lg border-gray-200 border-2 peer-checked:border-blue-500 py-4 w-full text-sm font-medium text-gray-900">
                                     <span class="font-semibold text-lg">
                                         {{ number_format('50000000') }}
                                         <span class="text-xs">

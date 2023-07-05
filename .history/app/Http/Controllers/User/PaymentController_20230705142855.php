@@ -37,7 +37,7 @@ class PaymentController extends Controller
          ];
 
          $deposit = TransactionWalletManager::deposit(
-            amount: array_search($request->get('amount'), $amounts),
+            amount: $request->get('amount'),
             user: $request->user(),
         );
 

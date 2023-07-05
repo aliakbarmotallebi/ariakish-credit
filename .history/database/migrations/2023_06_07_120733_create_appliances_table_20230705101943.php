@@ -29,9 +29,6 @@ return new class extends Migration
             $table->string('image_after_url')
                 ->nullable();
 
-            $table->string('image_before_url')
-                ->nullable();
-
             $table->string('production_year');
 
             $table->enum('production_supporting', [
@@ -39,8 +36,8 @@ return new class extends Migration
                 'IMPORTS'
             ])->default('DOMESTIC');
 
-            $table->boolean('has_ariakish_warranty')
-                ->default(false);
+            $table->string('image_before_url')
+                    ->nullable();
 
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')

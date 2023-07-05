@@ -12,7 +12,7 @@
                     </div>
                     <form action="" enctype="multipart/form-data" method="POST">
                         @csrf
-                        <div class="grid lg:grid-cols-2 grid-cols-1 gap-5">
+                        <div class="flex flex-col lg:grid lg:grid-cols-2 grid-cols-1 gap-5">
                             <div class="w-full">
                                 <label for="role"
                                     class="@error('brand_name') error-label @enderror block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">
@@ -28,6 +28,7 @@
                                     </p>
                                 @enderror
                             </div>
+
                             <div class="w-full">
                                 <label for="role"
                                     class="@error('group_name') error-label @enderror  block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">
@@ -43,6 +44,7 @@
                                     </p>
                                 @enderror
                             </div>
+
                             <div class="w-full">
                                 <label for="role"
                                     class="@error('product_name') error-label @enderror block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">
@@ -58,6 +60,7 @@
                                     </p>
                                 @enderror
                             </div>
+
                             <div class="w-full">
                                 <label for="role"
                                     class="@error('variant_name') error-label @enderror block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">
@@ -73,45 +76,8 @@
                                     </p>
                                 @enderror
                             </div>
-                            <div class="w-full">
-                                <label for="role"
-                                    class="@error('production_year') error-label @enderror block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">
-                                    سال تولید
-                                    <span class="inline-flex bg-red-500 w-1 h-1 rounded-full"></span>
-                                </label>
-                                <?php $now = verta()->year ?>
-                                <select name="production_year"
-                                    class="@error('production_year') error-input @enderror bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2">
-                                    @for ($i = $now; $i >= 1384; $i--)
-                                        <option value="{{$i}}">
-                                            {{$i}}
-                                        </option>
-                                    @endfor
-                                </select>
-                                @error('production_year')
-                                    <p class="mt-1 text-xs text-red-600 dark:text-red-500">
-                                        {{ $message }}
-                                    </p>
-                                @enderror
-                            </div>
-                            <div class="w-full">
-                                <label for="role"
-                                    class="@error('production_supporting') error-label @enderror block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">
-                                    تأمین کننده کالا
-                                    <span class="inline-flex bg-red-500 w-1 h-1 rounded-full"></span>
-                                </label>
-                                <select name="production_supporting"
-                                    class="@error('production_supporting') error-input @enderror bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2">
-                                    <option value="DOMESTIC">داخلی</option>
-                                    <option value="IMPORTS">وارداتی</option>
-                                </select>
-                                @error('production_supporting')
-                                    <p class="mt-1 text-xs text-red-600 dark:text-red-500">
-                                        {{ $message }}
-                                    </p>
-                                @enderror
-                            </div>
-                            <div class="flex flex-col col-span-1 lg:col-span-2">
+
+                            <div class="flex flex-col col-span-1 col-span-2">
                                 <label class="text-sm">عکس قبل از لیبل
                                     <span class="inline-flex bg-red-500 w-1 h-1 rounded-full"></span>
                                 </label>
@@ -134,7 +100,7 @@
                                     </small>
                                 @enderror
                             </div>
-                            <div class="lg:col-span-2 col-span-1 my-4 text-left border-t border-gray-200 py-5">
+                            <div class="col-span-3 my-4 text-left border-t border-gray-200 py-5">
                                 <button type="submit"
                                     class="bg-primary text-white hover:bg-primary/50 focus:ring-4 focus:outline-none focus:ring-primary/30 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
                                     افزودن دستگاه جدید

@@ -79,14 +79,8 @@
                                     سال تولید
                                     <span class="inline-flex bg-red-500 w-1 h-1 rounded-full"></span>
                                 </label>
-                                <?php $now = verta()->year ?>
                                 <select name="production_year"
                                     class="@error('production_year') error-input @enderror bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2">
-                                    @for ($i = $now; $i >= 1384; $i--)
-                                        <option value="{{$i}}">
-                                            {{$i}}
-                                        </option>
-                                    @endfor
                                 </select>
                                 @error('production_year')
                                     <p class="mt-1 text-xs text-red-600 dark:text-red-500">
@@ -97,7 +91,7 @@
                             <div class="w-full">
                                 <label for="role"
                                     class="@error('production_supporting') error-label @enderror block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">
-                                    تأمین کننده کالا
+                                    محصول
                                     <span class="inline-flex bg-red-500 w-1 h-1 rounded-full"></span>
                                 </label>
                                 <select name="production_supporting"

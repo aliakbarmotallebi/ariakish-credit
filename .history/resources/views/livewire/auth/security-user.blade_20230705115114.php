@@ -34,7 +34,7 @@
                 </div>
             </div>
         </div>
-        @if ($currentPage === 1)
+        @if ($currentPage === 2)
             <div class="text-center my-5 font-light text-sm">
                 لطفا برای ورود شماره همراه خود را در کادر پایین وارد کنید.
             </div>
@@ -74,21 +74,17 @@
                     </div>
                 </form>
             </div>
-        @elseif($currentPage === 2)
+        @elseif($currentPage === 1)
             <div class="text-center my-5 font-light text-sm">
                 کدی که برای شما پیامک شد ارسال شد را وارد کنید.
             </div>
             <div>
-                <form>
-                    <div>
-                        <div  class="flex justify-between items-center">
+                <form wire:submit.prevent="verify">
+                    <div class="flex justify-between items-center">
+                        <div>
                             <label for="code" class="text-sm font-bold">
                                 کد تاییدیه
                             </label>
-                            <button  wire:click="prevPage" class="text-blue-300 underline text-xs">
-                                اصلاح شماره تماس
-                            </button>
-                        </div>
                             <input type="text" wire:model="code" name="code"
                                 class="text-center  w-full border mt-3 border-line rounded-md py-2 focus:outline-none focus-within:border-textMain px-4" />
                             @error('code')
@@ -97,7 +93,10 @@
                                     {{ $message }}
                                 </small>
                             @enderror
-
+                        </div>
+                        <button  wire:click="prevPage" class="text-blue-300 underline text-sm">
+                            اصلاح شماره تماس
+                        </button>
                     </div>
                     <div class="mt-4 text-center">
                         <div x-data="{
