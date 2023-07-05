@@ -5,6 +5,7 @@ namespace App\Http\Controllers\User;
 use App\Facades\TransactionWalletManager;
 use App\Http\Controllers\Controller;
 use App\Models\Payment;
+use App\Models\Tariff;
 use App\PaymentProcessor\Facades\PaymentManager;
 use Illuminate\Http\Request;
 
@@ -26,18 +27,14 @@ class PaymentController extends Controller
     public function request(Request $request)
     {
         $this->validate($request,[
-            'amount' => 'required|numeric|in:1,2,5',
+            'amount' => 'required|numeric|exists:tariffs,id',
             'gateway' => 'required|in:MELLAT,SAMANKISH',
          ]);
 
-         $amounts = [
-            '10000000' => 1,
-            '20000000' => 2,
-            '50000000' => 5
-         ];
+         $tariff = Tariff::find($request->get('amount'));
 
          $deposit = TransactionWalletManager::deposit(
-            amount: array_search($request->get('amount'), $amounts),
+            amount: $tariff->getRawOriginal('amount_substitute'),
             user: $request->user(),
         );
 

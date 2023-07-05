@@ -13,7 +13,7 @@
                         <div class="grid grid-cols-1 lg:grid-cols-3 gap-2 ">
                             @foreach ($tariffs as $tariff)
                             <label class="relative cursor-pointer">
-                                <input id="box-1" type="radio" name="amount" value="{{ $tariff->id }}" class="peer hidden">
+                                <input id="box-1" type="radio" name="amount" value="1" class="peer hidden">
                                 <div for="box-1"
                                     class="text-left pl-4 rounded-lg border-gray-200 border-2 peer-checked:bg-blue-50 peer-checked:border-blue-500 py-4 w-full text-sm font-medium text-gray-900">
                                     <span class="font-semibold text-lg">
@@ -24,7 +24,6 @@
                                     </span>
                                     <div
                                         class="text-right text-gray-800 text-xs font-medium px-2.5 py-0.5 before:content-['-']">
-                                        معادل
                                         {{ $tariff->amount_words }}
                                         <span class="text-xs">
                                             تومان
@@ -32,8 +31,7 @@
                                     </div>
                                     <div
                                         class="text-right text-xs font-medium px-2.5 py-0.5 text-neutral-500 before:content-['-']">
-                                        مبلغ اعتبار در کیف پول
-                                        {{ $tariff->amount_substitute }}
+                                        {{ $tariff->amount_words }}
                                         <span class="text-xs">
                                             تومان
                                         </span>
@@ -41,6 +39,7 @@
                                 </div>
                             </label>
                             @endforeach
+
                             <div class="col-sapn-1 lg:col-span-3 ">
                                 <div class="flex items-center justify-center space-x-2 space-x-reverse pt-3 col-span-3">
                                     <div>

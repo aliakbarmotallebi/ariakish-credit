@@ -13,7 +13,7 @@
                         <div class="grid grid-cols-1 lg:grid-cols-3 gap-2 ">
                             @foreach ($tariffs as $tariff)
                             <label class="relative cursor-pointer">
-                                <input id="box-1" type="radio" name="amount" value="{{ $tariff->id }}" class="peer hidden">
+                                <input id="box-1" type="radio" name="amount" value="1" class="peer hidden">
                                 <div for="box-1"
                                     class="text-left pl-4 rounded-lg border-gray-200 border-2 peer-checked:bg-blue-50 peer-checked:border-blue-500 py-4 w-full text-sm font-medium text-gray-900">
                                     <span class="font-semibold text-lg">

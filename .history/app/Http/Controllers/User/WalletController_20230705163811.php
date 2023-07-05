@@ -17,8 +17,12 @@ class WalletController extends Controller
     {
         $wallets = $request->user()->wallets()->latest()->paginate(15);
         $tariffs = Tariff::get();
+        $tariff = new Tariff;
+        $tariff->amount = 20000000;
+        $tariff->amount_substitute = 40000000;
+        $tariff->save();
         return view('panel.wallet',
-            compact('wallets', 'tariffs')
+            compact('wallets')
         );        
     }
 }
