@@ -5,15 +5,6 @@ FROM php:8.1-fpm
 WORKDIR /var/www
 # Aqui vai remover a pasta html
 RUN rm -rf /var/www/html
-
-# Para alterar o caminho da versão LTS do node acessar essa página
-# https://github.com/nodesource/distributions#debmanual
-COPY package*.json ./
-
-# Node.js
-RUN curl -sL https://deb.nodesource.com/setup_18.x -o node_setup.sh && \
-    bash node_setup.sh && \
-    apt-get install -y nodejs
     
 # Install system dependencies
 RUN apt-get update && apt-get install -y \

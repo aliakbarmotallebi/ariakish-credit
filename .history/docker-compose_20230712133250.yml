@@ -16,7 +16,6 @@ services:
         volumes:
             - ./:/var/www
         networks: 
-            - default
             - databases_database
                 
     # nginx
@@ -28,8 +27,7 @@ services:
         volumes: 
             - ./:/var/www
             - ./docker/nginx/:/etc/nginx/conf.d/
-        networks:   
-            - default
+        networks: 
             - databases_database
             
     #Node Service
@@ -40,9 +38,6 @@ services:
         volumes:
         - ./:/var/www
         networks:
-            - default
             - databases_database
-        entrypoint: ['npm']
-
 
 

@@ -37,7 +37,8 @@ trait SmsVerification
         }
 
 
-        $message = "کدتایید آریاکیش: {$code} \n لغو:11";
+        $message = "کدتایید آریاکیش: {$code}";
+        $message .= "\n لغو۱۱";
 
         $sender  = new SMSTools();
         $sender->to($this->mobile);
